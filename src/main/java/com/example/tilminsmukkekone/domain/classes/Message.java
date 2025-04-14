@@ -83,4 +83,20 @@ public class Message {
     public void setScheduledFor(LocalDateTime scheduledFor) {
         this.scheduledFor = scheduledFor;
     }
+
+    public boolean isRead() {
+        return isRead;
+    }
+
+    public void setRead(boolean read) {
+        isRead = read;
+    }
+
+    public MessageType getType() {
+        return type;
+    }
+
+    public void setType(MessageType type) {
+        this.type = type;
+    }
 }

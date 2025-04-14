@@ -1,6 +1,8 @@
 ﻿package com.example.tilminsmukkekone.domain.classes;
 
 public class Location {
+
+    private Long id;
     private String name;
     private String address;
     private double latitude;
@@ -8,11 +10,20 @@ public class Location {
 
     public Location() {}
 
-    public Location(String name, String address, double latitude, double longitude) {
+    public Location(Long id, String name, String address, double latitude, double longitude) {
+        this.id = id;
         this.name = name;
         this.address = address;
         this.latitude = latitude;
         this.longitude = longitude;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
