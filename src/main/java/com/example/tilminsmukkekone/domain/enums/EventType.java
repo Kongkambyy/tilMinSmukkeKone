@@ -1,4 +1,4 @@
-﻿package com.example.tilminsmukkekone.domain.enums;
+package com.example.tilminsmukkekone.domain.enums;
 
 public enum EventType {
     ANNIVERSARY,

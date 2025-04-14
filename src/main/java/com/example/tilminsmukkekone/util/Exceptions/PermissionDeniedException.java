@@ -1,4 +1,4 @@
-﻿package com.example.tilminsmukkekone.util.Exceptions;
+package com.example.tilminsmukkekone.util.Exceptions;
 
 public class PermissionDeniedException extends RuntimeException {
     public PermissionDeniedException(String message) {

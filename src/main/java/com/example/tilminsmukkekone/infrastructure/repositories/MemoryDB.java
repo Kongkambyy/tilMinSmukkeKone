@@ -1,4 +1,4 @@
-﻿package com.example.tilminsmukkekone.infrastructure.repositories;
+package com.example.tilminsmukkekone.infrastructure.repositories;
 
 import com.example.tilminsmukkekone.domain.classes.Memory;
 import com.example.tilminsmukkekone.domain.classes.User;

@@ -1,4 +1,4 @@
-﻿package com.example.tilminsmukkekone.util.Exceptions;
+package com.example.tilminsmukkekone.util.Exceptions;
 
 public class MemoryNotFoundException extends RuntimeException {
     public MemoryNotFoundException(Long memoryId) {

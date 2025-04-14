@@ -1,4 +1,4 @@
-﻿package com.example.tilminsmukkekone.application;
+package com.example.tilminsmukkekone.application;
 
 public class MessageService {
 }

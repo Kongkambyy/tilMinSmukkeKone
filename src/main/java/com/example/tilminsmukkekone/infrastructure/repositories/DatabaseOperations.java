@@ -1,4 +1,4 @@
-﻿package com.example.tilminsmukkekone.infrastructure.repositories;
+package com.example.tilminsmukkekone.infrastructure.repositories;
 
 import org.springframework.stereotype.Component;
 

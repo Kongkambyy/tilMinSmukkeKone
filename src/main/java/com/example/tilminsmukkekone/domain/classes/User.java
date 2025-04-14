@@ -1,4 +1,4 @@
-﻿package com.example.tilminsmukkekone.domain.classes;
+package com.example.tilminsmukkekone.domain.classes;
 
 import java.time.LocalDate;
 

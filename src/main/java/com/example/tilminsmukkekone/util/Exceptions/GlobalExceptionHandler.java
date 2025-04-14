@@ -1,4 +1,4 @@
-﻿package com.example.tilminsmukkekone.util.Exceptions;
+package com.example.tilminsmukkekone.util.Exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

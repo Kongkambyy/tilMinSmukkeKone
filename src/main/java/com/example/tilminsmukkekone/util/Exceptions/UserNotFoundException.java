@@ -1,4 +1,4 @@
-﻿package com.example.tilminsmukkekone.util.Exceptions;
+package com.example.tilminsmukkekone.util.Exceptions;
 
 public class UserNotFoundException extends RuntimeException {
     public UserNotFoundException(Long userId) {

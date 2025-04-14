@@ -1,4 +1,4 @@
-﻿package com.example.tilminsmukkekone.infrastructure.config;
+package com.example.tilminsmukkekone.infrastructure.config;
 
 import com.example.tilminsmukkekone.infrastructure.repositories.DatabaseOperations;
 import com.zaxxer.hikari.HikariConfig;

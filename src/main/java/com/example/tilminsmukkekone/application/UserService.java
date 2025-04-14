@@ -1,4 +1,4 @@
-﻿package com.example.tilminsmukkekone.application;
+package com.example.tilminsmukkekone.application;
 
 import com.example.tilminsmukkekone.domain.classes.Event;
 import com.example.tilminsmukkekone.domain.classes.User;

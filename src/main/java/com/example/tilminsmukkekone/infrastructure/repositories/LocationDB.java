@@ -1,4 +1,4 @@
-﻿package com.example.tilminsmukkekone.infrastructure.repositories;
+package com.example.tilminsmukkekone.infrastructure.repositories;
 
 import com.example.tilminsmukkekone.domain.classes.Location;
 import com.example.tilminsmukkekone.infrastructure.util.DatabaseException;
@@ -81,7 +81,7 @@ public class LocationDB {
                     location.getAddress(),
                     location.getLatitude(),
                     location.getLongitude(),
-                    location.getId() // Added the missing ID parameter
+                    location.getId()
             };
 
             int rowsAffected = dbOps.executeUpdate(sql, params);

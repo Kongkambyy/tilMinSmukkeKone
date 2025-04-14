@@ -1,4 +1,4 @@
-﻿package com.example.tilminsmukkekone.infrastructure.util;
+package com.example.tilminsmukkekone.infrastructure.util;
 
 public class ServiceException extends RuntimeException {
     public ServiceException(String message) {

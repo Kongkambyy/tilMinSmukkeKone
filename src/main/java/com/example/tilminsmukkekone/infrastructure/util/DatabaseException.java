@@ -1,4 +1,4 @@
-﻿package com.example.tilminsmukkekone.infrastructure.util;
+package com.example.tilminsmukkekone.infrastructure.util;
 
 import java.sql.SQLException;
 
