@@ -1,0 +1,658 @@
+﻿.body,
+.body * {
+    box-sizing: border-box;
+}
+.body {
+    background: #f9d6c1;
+    height: 820px;
+    position: relative;
+}
+.div {
+    background: rgba(0, 0, 0, 0);
+    width: 1425.14px;
+    height: 35.07px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.div2 {
+    background: #f9d6c1;
+    width: 1425.14px;
+    height: 35.07px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.div3 {
+    background: rgba(0, 0, 0, 0);
+    width: 1300px;
+    height: 34.5px;
+    position: absolute;
+    left: 62.57px;
+    top: 0px;
+}
+.div4 {
+    background: rgba(0, 0, 0, 0);
+    width: 1200px;
+    height: 34.5px;
+    position: absolute;
+    left: 50px;
+    top: 0px;
+}
+.p {
+    background: rgba(0, 0, 0, 0);
+    width: 304.7px;
+    height: 39.5px;
+    position: absolute;
+    left: 447.65px;
+    top: 0px;
+}
+.span {
+    background: rgba(0, 0, 0, 0);
+    width: 304.7px;
+    height: 19.43px;
+    position: absolute;
+    left: 0px;
+    top: 10px;
+}
+.velkommen-til-vores-k-rlighedsside {
+    color: #7a1713;
+    text-align: center;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 304.7px;
+    height: 19.43px;
+}
+.image-258 {
+    width: 17px;
+    height: 18px;
+    position: absolute;
+    left: 283.78px;
+    top: 1px;
+    object-fit: cover;
+}
+.div5 {
+    background: rgba(0, 0, 0, 0);
+    width: 1425.14px;
+    height: 201.29px;
+    position: absolute;
+    left: 0px;
+    top: 35.07px;
+}
+.sticky-header {
+    background: #e16268;
+    width: 1425.14px;
+    height: 201.29px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.header {
+    background: rgba(0, 0, 0, 0);
+    width: 1300px;
+    height: 201.29px;
+    position: absolute;
+    left: 62.57px;
+    top: 0px;
+}
+.nav {
+    background: rgba(0, 0, 0, 0);
+    width: 597.55px;
+    height: 44.79px;
+    position: absolute;
+    left: 351.22px;
+    top: 140.5px;
+}
+.ul {
+    background: rgba(0, 0, 0, 0);
+    width: 597.55px;
+    height: 44.79px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.li {
+    background: rgba(0, 0, 0, 0);
+    width: 70.95px;
+    height: 44.79px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.a {
+    background: rgba(0, 0, 0, 0);
+    width: 70.95px;
+    height: 44.79px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.span2 {
+    background: rgba(0, 0, 0, 0);
+    width: 46.95px;
+    height: 20.79px;
+    position: absolute;
+    left: 12px;
+    top: 12px;
+}
+.hjem {
+    color: #7a1713;
+    text-align: left;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.li2 {
+    background: rgba(0, 0, 0, 0);
+    width: 87px;
+    height: 44.79px;
+    position: absolute;
+    left: 70.95px;
+    top: 0px;
+}
+.header-menu {
+    background: rgba(0, 0, 0, 0);
+    width: 87px;
+    height: 44.79px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.details {
+    background: rgba(0, 0, 0, 0);
+    width: 87px;
+    height: 44.79px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.summary {
+    background: rgba(0, 0, 0, 0);
+    width: 87px;
+    height: 44.79px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.span3 {
+    background: rgba(0, 0, 0, 0);
+    width: 48px;
+    height: 20.79px;
+    position: absolute;
+    left: 12px;
+    top: 12px;
+}
+.minder {
+    color: #7a1713;
+    text-align: left;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.svg {
+    width: 10px;
+    height: 6px;
+    position: absolute;
+    left: 69px;
+    top: 20.39px;
+    overflow: visible;
+}
+.li3 {
+    background: rgba(0, 0, 0, 0);
+    width: 88.42px;
+    height: 44.79px;
+    position: absolute;
+    left: 157.95px;
+    top: 0px;
+}
+.header-menu2 {
+    background: rgba(0, 0, 0, 0);
+    width: 88.42px;
+    height: 44.79px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.details2 {
+    background: rgba(0, 0, 0, 0);
+    width: 88.42px;
+    height: 44.79px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.summary2 {
+    background: rgba(0, 0, 0, 0);
+    width: 88.42px;
+    height: 44.79px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.span4 {
+    background: rgba(0, 0, 0, 0);
+    width: 49.42px;
+    height: 20.79px;
+    position: absolute;
+    left: 12px;
+    top: 12px;
+}
+.quiz {
+    color: #7a1713;
+    text-align: left;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    left: 15.26px;
+    top: 0.43px;
+}
+.svg2 {
+    width: 10px;
+    height: 6px;
+    position: absolute;
+    left: 70.42px;
+    top: 20.39px;
+    overflow: visible;
+}
+.li4 {
+    background: rgba(0, 0, 0, 0);
+    width: 96.8px;
+    height: 44.79px;
+    position: absolute;
+    left: 246.37px;
+    top: 0px;
+}
+.a2 {
+    background: rgba(0, 0, 0, 0);
+    width: 96.8px;
+    height: 44.79px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.span5 {
+    background: rgba(0, 0, 0, 0);
+    width: 72.8px;
+    height: 20.79px;
+    position: absolute;
+    left: 12px;
+    top: 12px;
+}
+.kalendar {
+    color: #7a1713;
+    text-align: left;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    left: 10.84px;
+    top: 0.43px;
+}
+.li5 {
+    background: rgba(0, 0, 0, 0);
+    width: 151.93px;
+    height: 44.79px;
+    position: absolute;
+    left: 343.17px;
+    top: 0px;
+}
+.header-menu3 {
+    background: rgba(0, 0, 0, 0);
+    width: 151.93px;
+    height: 44.79px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.details3 {
+    background: rgba(0, 0, 0, 0);
+    width: 151.93px;
+    height: 44.79px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.summary3 {
+    background: rgba(0, 0, 0, 0);
+    width: 151.93px;
+    height: 44.79px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.span6 {
+    background: rgba(0, 0, 0, 0);
+    width: 112.93px;
+    height: 20.79px;
+    position: absolute;
+    left: 12px;
+    top: 12px;
+}
+.billeder-af-os {
+    color: #7a1713;
+    text-align: left;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    left: 12.04px;
+    top: 0.43px;
+    width: 112.93px;
+    height: 20.79px;
+}
+.til-dig {
+    color: #7a1713;
+    text-align: left;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    left: 528.21px;
+    top: 12.43px;
+    width: 112.93px;
+    height: 20.79px;
+}
+.li6 {
+    background: rgba(0, 0, 0, 0);
+    width: 102.46px;
+    height: 44.79px;
+    position: absolute;
+    left: 495.1px;
+    top: 0px;
+}
+.header-menu4 {
+    background: rgba(0, 0, 0, 0);
+    width: 102.46px;
+    height: 44.79px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.details4 {
+    background: rgba(0, 0, 0, 0);
+    width: 102.46px;
+    height: 44.79px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.summary4 {
+    background: rgba(0, 0, 0, 0);
+    width: 102.46px;
+    height: 44.79px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.span7 {
+    background: rgba(0, 0, 0, 0);
+    width: 63.46px;
+    height: 20.79px;
+    position: absolute;
+    left: 12px;
+    top: 12px;
+}
+.image-259 {
+    width: 17px;
+    height: 18px;
+    position: absolute;
+    left: 3.11px;
+    top: 0.43px;
+    object-fit: cover;
+}
+.main {
+    background: rgba(0, 0, 0, 0);
+    width: 1425px;
+    height: 585px;
+    position: absolute;
+    left: 0px;
+    top: 236px;
+}
+.section {
+    background: rgba(0, 0, 0, 0);
+    width: 1425.14px;
+    height: 550.04px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.slideshow-component {
+    background: rgba(0, 0, 0, 0);
+    width: 1425.14px;
+    height: 550.04px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.div6 {
+    background: rgba(0, 0, 0, 0);
+    width: 1425.14px;
+    height: 550.04px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.div7 {
+    background: rgba(122, 23, 19, 0.1);
+    width: 1425.14px;
+    height: 550.04px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    overflow: hidden;
+}
+.img {
+    width: 1425.14px;
+    height: 550.04px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    object-fit: cover;
+}
+.div8 {
+    background: rgba(0, 0, 0, 0);
+    width: 1300px;
+    height: 550.04px;
+    position: absolute;
+    left: 62.57px;
+    top: 0px;
+}
+.div9 {
+    background: rgba(0, 0, 0, 0);
+    width: 650px;
+    height: 291.79px;
+    position: absolute;
+    left: 325px;
+    top: 129.12px;
+}
+.h-2 {
+    background: rgba(0, 0, 0, 0);
+    width: 580px;
+    height: 88px;
+    position: absolute;
+    left: 35px;
+    top: 40px;
+}
+.et-sted-der-gemmer-alle-vores-minder {
+    color: #7a1713;
+    text-align: center;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 40px;
+    font-weight: 400;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 580px;
+    height: 88px;
+}
+.div10 {
+    background: rgba(0, 0, 0, 0);
+    width: 580px;
+    height: 44.79px;
+    position: absolute;
+    left: 35px;
+    top: 138px;
+}
+.p2 {
+    background: rgba(0, 0, 0, 0);
+    width: 580px;
+    height: 44.79px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.hjemmesiden-er-dedikeret-til-at-dokumentere-de-vigtigste-minder-fra-vores-forhold-og-holde-styr-p-fremtidige-minder {
+    color: #7a1713;
+    text-align: center;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 580px;
+    height: 44.79px;
+}
+.div11 {
+    background: rgba(0, 0, 0, 0);
+    width: 129.55px;
+    height: 49px;
+    position: absolute;
+    left: 260.22px;
+    top: 202.79px;
+}
+.a3 {
+    background: #bd1e1e;
+    border-radius: 42px;
+    width: 129.55px;
+    height: 49px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.log-ind {
+    color: #f9d6c1;
+    text-align: center;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    left: 37.21px;
+    top: 14.09px;
+}
+.div12 {
+    background: rgba(0, 0, 0, 0);
+    width: 1425.14px;
+    height: 34.39px;
+    position: absolute;
+    left: 0px;
+    top: 550.04px;
+}
+.section2 {
+    background: #7a1713;
+    width: 1425.14px;
+    height: 34.39px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.div13 {
+    background: rgba(0, 0, 0, 0);
+    width: 1425.14px;
+    height: 22.39px;
+    position: absolute;
+    left: 0px;
+    top: 6px;
+}
+.div14 {
+    background: rgba(0, 0, 0, 0);
+    width: 1409.14px;
+    height: 22.39px;
+    position: absolute;
+    left: 8px;
+    top: 0px;
+}
+.div15 {
+    background: rgba(0, 0, 0, 0);
+    width: 1409.14px;
+    height: 22.39px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    overflow: hidden;
+}
+.ul2 {
+    background: rgba(0, 0, 0, 0);
+    width: 1461.41px;
+    height: 22.39px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.li7 {
+    background: rgba(0, 0, 0, 0);
+    width: 288.6px;
+    height: 22.39px;
+    position: absolute;
+    left: 312.19px;
+    top: 0px;
+}
+.span8 {
+    background: rgba(0, 0, 0, 0);
+    width: 288.6px;
+    height: 18.86px;
+    position: absolute;
+    left: 0px;
+    top: 1.71px;
+}
+.li8 {
+    background: rgba(0, 0, 0, 0);
+    width: 471.27px;
+    height: 22.39px;
+    position: absolute;
+    left: 990.14px;
+    top: 0px;
+}
+.span9 {
+    background: rgba(0, 0, 0, 0);
+    width: 471.27px;
+    height: 18.86px;
+    position: absolute;
+    left: 0px;
+    top: 1.71px;
+}
+.minder-fra-hele-vores-forhold {
+    color: #f9d6c1;
+    text-align: center;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    left: -186.14px;
+    top: 0.25px;
+    width: 288.6px;
+    height: 18.86px;
+}
+.velkommen-til-vores-k-rlighedsside2 {
+    color: #f9d6c1;
+    text-align: center;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    left: 364px;
+    top: 1.96px;
+    width: 292.19px;
+    height: 18.86px;
+}
