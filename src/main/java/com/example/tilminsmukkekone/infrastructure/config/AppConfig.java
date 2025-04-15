@@ -9,5 +9,4 @@ import org.springframework.context.annotation.Configuration;
         "com.example.tilminsmukkekone.infrastructure.repositories"
 })
 public class AppConfig {
-    // Configuration is handled through component scanning
 }
