@@ -2,8 +2,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Til Min Smukke Kone</title>
-    <link rel="stylesheet" href="/css/vars.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log ind - Til Min Smukke Kone</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -27,17 +27,14 @@
     <div class="div5">
         <div class="sticky-header">
             <div class="header">
-                <div class="logo-container">
-                    <img src="/images/image-262.png" alt="J S Hearts Logo" class="logo-image">
-                </div>
                 <div class="nav">
                     <div class="ul">
                         <div class="li">
-                            <div class="a">
+                            <a href="/" class="a">
                                 <div class="span2">
                                     <div class="hjem">Hjem</div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="li2">
                             <div class="header-menu">
@@ -99,6 +96,7 @@
                         </div>
                     </div>
                 </div>
+                <img class="image-262" src="/images/image-262.png" />
             </div>
         </div>
     </div>
@@ -112,28 +110,22 @@
                         </div>
                         <div class="div8">
                             <div class="div9">
-                                <form action="/login" method="post" id="loginForm">
-                                    <div class="h-2" style="height: auto; margin-bottom: 20px;">
-                                        <input type="text" name="username" placeholder="Brugernavn"
-                                               style="width: 80%; height: 40px; padding: 0 10px;
-                          border: 2px solid #bd1e1e; border-radius: 8px;
-                          font-family: 'Inter-Regular', sans-serif; font-size: 16px;
-                          color: #7a1713; background-color: rgba(255, 255, 255, 0.9);">
+                                <!-- Login form replaces content in this div -->
+                                <form action="/login" method="post" class="login-form">
+                                    <div class="h-2">
+                                        <input type="text" name="username" placeholder="Brugernavn" class="login-field">
                                     </div>
-                                    <div class="div10" style="top: auto; margin-bottom: 20px;">
-                                        <input type="password" name="password" placeholder="Adgangskode"
-                                               style="width: 80%; height: 40px; padding: 0 10px;
-                          border: 2px solid #bd1e1e; border-radius: 8px;
-                          font-family: 'Inter-Regular', sans-serif; font-size: 16px;
-                          color: #7a1713; background-color: rgba(255, 255, 255, 0.9);">
+                                    <div class="div10">
+                                        <input type="password" name="password" placeholder="Adgangskode" class="login-field">
                                     </div>
                                     <div class="div11">
-                                        <button type="submit" class="a3" style="border: none; cursor: pointer;">
+                                        <button type="submit" class="a3">
                                             <div class="log-ind">Log ind</div>
                                         </button>
                                     </div>
                                 </form>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -165,4 +157,5 @@
         </div>
     </div>
 </div>
+</body>
 </html>

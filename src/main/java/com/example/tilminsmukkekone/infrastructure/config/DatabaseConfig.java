@@ -15,7 +15,7 @@ public class DatabaseConfig {
     public DataSource dataSource() {
         HikariConfig config = new HikariConfig();
 
-        config.setJdbcUrl("jdbc:mysql://176.9.89.36:3306/tilminesmukkekone?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true");
+        config.setJdbcUrl("jdbc:mysql://176.9.89.36:3306/tilminsmukkekone?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true");
         config.setUsername("newuser");
         config.setPassword("h$HWvLP@(D7u");
         config.setDriverClassName("com.mysql.cj.jdbc.Driver");

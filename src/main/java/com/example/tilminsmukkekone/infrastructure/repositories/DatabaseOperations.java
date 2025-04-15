@@ -1,5 +1,6 @@
 package com.example.tilminsmukkekone.infrastructure.repositories;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.sql.DataSource;
@@ -13,8 +14,13 @@ public class DatabaseOperations {
 
     private final DataSource dataSource;
 
+    @Autowired
     public DatabaseOperations(DataSource dataSource) {
         this.dataSource = dataSource;
+    }
+
+    public DataSource getDataSource() {
+        return dataSource;
     }
 
     public <T> List<T> executeQuery(String sql, Object[] params, Function<ResultSet, T> mapper) throws SQLException {

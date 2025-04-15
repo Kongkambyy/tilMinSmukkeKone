@@ -1,36 +1,18 @@
-/* Font import for Ubuntu */
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
-
-/* Base styles and resets */
-*, *::before, *::after {
+.body,
+.body * {
     box-sizing: border-box;
 }
-
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-    font-family: 'Ubuntu', sans-serif;
-}
-
-/* Main body container */
 .body {
     background: #f9d6c1;
-    min-height: 100vh;
-    width: 100vw;
+    min-height: 100vh; /* Changed from fixed height to ensure it fills viewport */
+    width: 100%;      /* Make it responsive */
     position: relative;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-    font-family: 'Ubuntu', sans-serif;
+    margin: 0;        /* Remove default margins */
+    padding: 0;       /* Remove default padding */
 }
-
-/* Top notification bar */
 .div {
     background: rgba(0, 0, 0, 0);
-    width: 100%;
+    width: 100%;      /* Make it responsive */
     height: 35.07px;
     position: absolute;
     left: 0px;
@@ -38,7 +20,7 @@ html, body {
 }
 .div2 {
     background: #f9d6c1;
-    width: 100%;
+    width: 100%;      /* Make it responsive */
     height: 35.07px;
     position: absolute;
     left: 0px;
@@ -46,22 +28,20 @@ html, body {
 }
 .div3 {
     background: rgba(0, 0, 0, 0);
-    width: 100%;
-    max-width: 1300px;
+    width: 100%;      /* Make it responsive */
+    max-width: 1300px; /* Limit max width */
     height: 34.5px;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 50%;        /* Center it */
+    transform: translateX(-50%); /* Center it */
     top: 0px;
 }
 .div4 {
     background: rgba(0, 0, 0, 0);
-    width: 100%;
-    max-width: 1200px;
+    width: 1200px;
     height: 34.5px;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 50px;
     top: 0px;
 }
 .p {
@@ -69,8 +49,8 @@ html, body {
     width: 304.7px;
     height: 39.5px;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 50%;        /* Center it */
+    transform: translateX(-50%); /* Center it */
     top: 0px;
 }
 .span {
@@ -84,9 +64,9 @@ html, body {
 .velkommen-til-vores-k-rlighedsside {
     color: #7a1713;
     text-align: center;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: "Inter-Bold", sans-serif;
     font-size: 15px;
-    font-weight: 400;
+    font-weight: 700;
     position: absolute;
     left: 0px;
     top: 0px;
@@ -97,13 +77,13 @@ html, body {
     width: 17px;
     height: 18px;
     position: absolute;
-    left: 283.78px;
+    left: 287.78px;
     top: 1px;
     object-fit: cover;
 }
 .div5 {
     background: rgba(0, 0, 0, 0);
-    width: 100%;
+    width: 100%;      /* Make it responsive */
     height: 201.29px;
     position: absolute;
     left: 0px;
@@ -111,7 +91,7 @@ html, body {
 }
 .sticky-header {
     background: #e16268;
-    width: 100%;
+    width: 100%;      /* Make it responsive */
     height: 201.29px;
     position: absolute;
     left: 0px;
@@ -119,12 +99,12 @@ html, body {
 }
 .header {
     background: rgba(0, 0, 0, 0);
-    width: 100%;
-    max-width: 1300px;
+    width: 100%;      /* Make it responsive */
+    max-width: 1300px; /* Limit max width */
     height: 201.29px;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 50%;        /* Center it */
+    transform: translateX(-50%); /* Center it */
     top: 0px;
 }
 .nav {
@@ -132,8 +112,8 @@ html, body {
     width: 597.55px;
     height: 44.79px;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 50%;        /* Center it */
+    transform: translateX(-50%); /* Center it */
     top: 140.5px;
 }
 .ul {
@@ -159,6 +139,7 @@ html, body {
     position: absolute;
     left: 0px;
     top: 0px;
+    text-decoration: none; /* Added to remove underline */
 }
 .span2 {
     background: rgba(0, 0, 0, 0);
@@ -171,9 +152,9 @@ html, body {
 .hjem {
     color: #7a1713;
     text-align: left;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: "Inter-Bold", sans-serif;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 700;
     position: absolute;
     left: 0px;
     top: 0px;
@@ -221,9 +202,9 @@ html, body {
 .minder {
     color: #7a1713;
     text-align: left;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: "Inter-Bold", sans-serif;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 700;
     position: absolute;
     left: 0px;
     top: 0px;
@@ -279,9 +260,9 @@ html, body {
 .quiz {
     color: #7a1713;
     text-align: left;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: "Inter-Bold", sans-serif;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 700;
     position: absolute;
     left: 15.26px;
     top: 0.43px;
@@ -321,9 +302,9 @@ html, body {
 .kalendar {
     color: #7a1713;
     text-align: left;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: "Inter-Bold", sans-serif;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 700;
     position: absolute;
     left: 10.84px;
     top: 0.43px;
@@ -371,9 +352,9 @@ html, body {
 .billeder-af-os {
     color: #7a1713;
     text-align: left;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: "Inter-Bold", sans-serif;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 700;
     position: absolute;
     left: 12.04px;
     top: 0.43px;
@@ -383,9 +364,9 @@ html, body {
 .til-dig {
     color: #7a1713;
     text-align: left;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: "Inter-Bold", sans-serif;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 700;
     position: absolute;
     left: 528.21px;
     top: 12.43px;
@@ -436,56 +417,64 @@ html, body {
     width: 17px;
     height: 18px;
     position: absolute;
-    left: 3.11px;
-    top: 0.43px;
+    left: 0.11px;
+    top: 2.43px;
     object-fit: cover;
 }
-
-/* Main section */
+.image-262 {
+    width: 161px;
+    height: 161px;
+    position: absolute;
+    left: 50%;        /* Center it */
+    transform: translateX(-50%); /* Center it */
+    top: 2.93px;
+    object-fit: cover;
+    aspect-ratio: 1;
+}
 .main {
     background: rgba(0, 0, 0, 0);
-    width: 100%;
-    min-height: calc(100vh - 236px - 34.39px);
+    width: 100%;      /* Make it responsive */
+    min-height: calc(100vh - 236px - 34.39px); /* Calculate remaining height */
     position: absolute;
     left: 0px;
     top: 236px;
 }
 .section {
     background: rgba(0, 0, 0, 0);
-    width: 100%;
-    height: calc(100vh - 236px - 34.39px);
+    width: 100%;      /* Make it responsive */
+    height: calc(100vh - 236px - 34.39px); /* Calculate remaining height */
     position: absolute;
     left: 0px;
     top: 0px;
 }
 .slideshow-component {
     background: rgba(0, 0, 0, 0);
-    width: 100%;
-    height: 100%;
+    width: 100%;      /* Make it responsive */
+    height: 100%;    /* Use full container height */
     position: absolute;
     left: 0px;
     top: 0px;
 }
 .div6 {
     background: rgba(0, 0, 0, 0);
-    width: 100%;
-    height: 100%;
+    width: 100%;      /* Make it responsive */
+    height: 100%;    /* Use full container height */
     position: absolute;
     left: 0px;
     top: 0px;
 }
 .div7 {
     background: rgba(122, 23, 19, 0.1);
-    width: 100%;
-    height: 100%;
+    width: 100%;      /* Make it responsive */
+    height: 100%;    /* Use full container height */
     position: absolute;
     left: 0px;
     top: 0px;
     overflow: hidden;
 }
 .img {
-    width: 100%;
-    height: 100%;
+    width: 100%;      /* Make it responsive */
+    height: 100%;    /* Use full container height */
     position: absolute;
     left: 0px;
     top: 0px;
@@ -493,34 +482,24 @@ html, body {
 }
 .div8 {
     background: rgba(0, 0, 0, 0);
-    width: 100%;
-    max-width: 1300px;
-    height: 100%;
+    width: 100%;      /* Make it responsive */
+    max-width: 1300px; /* Limit max width */
+    height: 100%;    /* Use full container height */
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 50%;        /* Center it */
+    transform: translateX(-50%); /* Center it */
     top: 0px;
 }
-
-/* Central content area with animations */
 .div9 {
     background: rgba(0, 0, 0, 0);
     width: 650px;
     height: 291.79px;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 50%;
-    margin-top: -145.9px;
-    animation: fadeIn 0.5s ease-out;
+    left: 50%;        /* Center it */
+    transform: translateX(-50%); /* Center it */
+    top: 50%;        /* Center vertically */
+    margin-top: -145.9px; /* Half of height for vertical centering */
 }
-
-/* Animation keyframes */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateX(-50%) translateY(15px); }
-    to { opacity: 1; transform: translateX(-50%) translateY(0); }
-}
-
 .h-2 {
     background: rgba(0, 0, 0, 0);
     width: 580px;
@@ -532,12 +511,12 @@ html, body {
 .et-sted-der-gemmer-alle-vores-minder {
     color: #7a1713;
     text-align: center;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: "Inter-Regular", sans-serif;
     font-size: 40px;
     font-weight: 400;
     position: absolute;
     left: 0px;
-    top: -10px; /* Moved up 10px as requested */
+    top: 0px;
     width: 580px;
     height: 88px;
 }
@@ -560,7 +539,7 @@ html, body {
 .hjemmesiden-er-dedikeret-til-at-dokumentere-de-vigtigste-minder-fra-vores-forhold-og-holde-styr-p-fremtidige-minder {
     color: #7a1713;
     text-align: center;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: "Inter-Regular", sans-serif;
     font-size: 16px;
     font-weight: 400;
     position: absolute;
@@ -577,8 +556,6 @@ html, body {
     left: 260.22px;
     top: 202.79px;
 }
-
-/* Login button with hover effect */
 .a3 {
     background: #bd1e1e;
     border-radius: 42px;
@@ -588,55 +565,33 @@ html, body {
     left: 0px;
     top: 0px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none; /* Added for button to work properly */
+    color: inherit; /* Added for button */
+    font: inherit; /* Added for button */
+    text-decoration: none; /* Remove underline from links */
 }
-
-.a3:hover {
-    background-color: #a51b1b;
-    transform: scale(1.03);
-}
-
-.a3:active {
-    transform: scale(0.98);
-}
-
 .log-ind {
     color: #f9d6c1;
     text-align: center;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: "Inter-Bold", sans-serif;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 700;
     position: absolute;
-    left: 37.21px;
+    left: 36.21px;
     top: 14.09px;
 }
-
-/* Login form styling */
-#loginForm {
-    animation: formFadeIn 0.5s ease-out;
-}
-
-#loginForm input {
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 16px;
-}
-
-@keyframes formFadeIn {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
 .div12 {
     background: rgba(0, 0, 0, 0);
-    width: 100%;
+    width: 100%;      /* Make it responsive */
     height: 34.39px;
-    position: absolute;
+    position: fixed; /* Changed to fixed to ensure it stays at bottom */
     left: 0px;
-    bottom: 0px;
+    bottom: 0px;    /* Position at bottom of viewport */
+    z-index: 10;    /* Ensure it's above other content */
 }
 .section2 {
     background: #7a1713;
-    width: 100%;
+    width: 100%;      /* Make it responsive */
     height: 34.39px;
     position: absolute;
     left: 0px;
@@ -644,7 +599,7 @@ html, body {
 }
 .div13 {
     background: rgba(0, 0, 0, 0);
-    width: 100%;
+    width: 100%;      /* Make it responsive */
     height: 22.39px;
     position: absolute;
     left: 0px;
@@ -652,17 +607,17 @@ html, body {
 }
 .div14 {
     background: rgba(0, 0, 0, 0);
-    width: 100%;
-    max-width: 1409.14px;
+    width: 100%;      /* Make it responsive */
+    max-width: 1409.14px; /* Limit max width */
     height: 22.39px;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 50%;        /* Center it */
+    transform: translateX(-50%); /* Center it */
     top: 0px;
 }
 .div15 {
     background: rgba(0, 0, 0, 0);
-    width: 100%;
+    width: 100%;      /* Make it responsive */
     height: 22.39px;
     position: absolute;
     left: 0px;
@@ -671,20 +626,20 @@ html, body {
 }
 .ul2 {
     background: rgba(0, 0, 0, 0);
-    width: 100%;
+    width: 100%;      /* Make it responsive */
     height: 22.39px;
     position: absolute;
     left: 0px;
     top: 0px;
-    display: flex;
-    justify-content: center;
+    display: flex; /* Added for better centering */
+    justify-content: center; /* Added for better centering */
 }
 .li7 {
     background: rgba(0, 0, 0, 0);
     width: 288.6px;
     height: 22.39px;
-    position: relative;
-    margin: 0 10px;
+    position: relative; /* Changed from absolute */
+    margin: 0 10px;  /* Added spacing */
 }
 .span8 {
     background: rgba(0, 0, 0, 0);
@@ -698,8 +653,8 @@ html, body {
     background: rgba(0, 0, 0, 0);
     width: 471.27px;
     height: 22.39px;
-    position: relative;
-    margin: 0 10px;
+    position: relative; /* Changed from absolute */
+    margin: 0 10px;  /* Added spacing */
 }
 .span9 {
     background: rgba(0, 0, 0, 0);
@@ -712,12 +667,12 @@ html, body {
 .minder-fra-hele-vores-forhold {
     color: #f9d6c1;
     text-align: center;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: "Inter-Bold", sans-serif;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 700;
     position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 50%;        /* Center text */
+    transform: translateX(-50%); /* Center text */
     top: 0.25px;
     width: 288.6px;
     height: 18.86px;
@@ -725,28 +680,56 @@ html, body {
 .velkommen-til-vores-k-rlighedsside2 {
     color: #f9d6c1;
     text-align: center;
-    font-family: 'Ubuntu', sans-serif;
+    font-family: "Inter-Bold", sans-serif;
     font-size: 16px;
-    font-weight: 400;
-    position: relative;
-    margin: 0 auto;
+    font-weight: 700;
+    position: relative; /* Changed from absolute */
+    margin: 0 auto;  /* Center */
     width: 292.19px;
     height: 18.86px;
     line-height: 22.39px;
 }
 
-/* Media queries for responsiveness */
+.login-form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-field {
+    width: 100%;
+    height: 40px;
+    padding: 0 15px;
+    margin: 10px 0;
+    border: 2px solid #bd1e1e;
+    border-radius: 8px;
+    font-family: "Inter-Bold", sans-serif;
+    font-size: 16px;
+    color: #7a1713;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.login-field:focus {
+    outline: none;
+    border-color: #7a1713;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
 @media screen and (max-width: 768px) {
     .div9 {
         width: 90%;
-        left: 5%;
-        transform: none;
-        animation: fadeInMobile 0.5s ease-out;
-    }
-
-    @keyframes fadeInMobile {
-        from { opacity: 0; transform: translateY(15px); }
-        to { opacity: 1; transform: translateY(0); }
+        left: 50%;
+        transform: translateX(-50%);
     }
 
     .h-2, .div10 {
@@ -763,164 +746,4 @@ html, body {
         left: 50%;
         transform: translateX(-50%);
     }
-}
-
-/* Logo styles */
-.logo-container {
-    position: absolute;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    top: 10px;
-    z-index: 10;
-}
-
-.logo-image {
-    width: 160px;
-    height: auto;
-    display: block;
-}
-
-.et-sted-der-gemmer-alle-vores-minder {
-    color: #7a1713;
-    text-align: center;
-    font-family: 'Ubuntu', serif; /* Tilføj serif for at ligne originalen mere */
-    font-size: 45px; /* Større tekst som i originalen */
-    font-weight: 700; /* Mere fed skrift */
-    letter-spacing: -0.5px; /* Tættere bogstavafstand */
-    line-height: 1.1; /* Tættere linjeafstand */
-    position: absolute;
-    left: 0px;
-    top: -10px;
-    width: 580px;
-    height: auto; /* Lad højden tilpasse sig indholdet */
-}
-
-.hjemmesiden-er-dedikeret-til-at-dokumentere-de-vigtigste-minder-fra-vores-forhold-og-holde-styr-p-fremtidige-minder {
-    color: #7a1713;
-    text-align: center;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.5; /* Bedre linjeafstand */
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 580px;
-    height: auto; /* Lad højden tilpasse sig indholdet */
-    margin-top: 20px; /* Mere afstand fra overskriften */
-}
-
-.div12 {
-    background: rgba(0, 0, 0, 0);
-    width: 100%;
-    height: 60px; /* Højere bundområde som i originalen */
-    position: absolute;
-    left: 0px;
-    bottom: 0px;
-}
-
-.section2 {
-    background: #7a1713;
-    width: 100%;
-    height: 60px; /* Match div12 højde */
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    display: flex;
-    align-items: center; /* Centrér indhold vertikalt */
-}
-
-/* Tilføj stilen til bundtekst containeren */
-.footer-text-container {
-    display: flex;
-    justify-content: space-between; /* Fordel elementer jævnt */
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.minder-fra-hele-vores-forhold,
-.velkommen-til-vores-k-rlighedsside2 {
-    color: #f9d6c1;
-    text-align: center;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    margin: 0;
-    padding: 0;
-}
-
-.a3 {
-    background: #bd1e1e;
-    border-radius: 30px; /* Mere afrundede hjørner */
-    width: 140px; /* Lidt bredere knap */
-    height: 50px;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.log-ind {
-    color: #f9d6c1;
-    text-align: center;
-    font-family: 'Ubuntu', sans-serif;
-    font-size: 16px;
-    font-weight: 500; /* Lidt mere fed */
-    margin: 0;
-    padding: 0;
-}
-
-/* Navigation link styles */
-.nav a {
-    text-decoration: none;
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    color: inherit;
-}
-
-.summary, .summary2, .summary3, .summary4 {
-    cursor: pointer;
-}
-
-.til-dig-link {
-    text-decoration: none;
-    color: inherit;
-    position: absolute;
-    left: 528.21px;
-    top: 12.43px;
-    width: 112.93px;
-    height: 20.79px;
-}
-
-/* Hover effects for nav items */
-.nav a:hover .hjem,
-.nav a:hover .minder,
-.nav a:hover .quiz,
-.nav a:hover .kalendar,
-.nav a:hover .billeder-af-os,
-.til-dig-link:hover .til-dig {
-    color: #a51b1b;
-    transition: color 0.2s ease;
-}
-
-/* Update styles for clickable elements */
-.summary, .summary2, .summary3, .summary4,
-.a, .a2, .til-dig-link {
-    cursor: pointer;
-}
-
-/* Add a slight background effect on hover */
-.nav a:hover,
-.til-dig-link:hover {
-    background-color: rgba(225, 98, 104, 0.1);
-    border-radius: 5px;
 }

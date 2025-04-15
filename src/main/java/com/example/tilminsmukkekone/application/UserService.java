@@ -1,24 +1,26 @@
 package com.example.tilminsmukkekone.application;
 
-import com.example.tilminsmukkekone.domain.classes.Event;
 import com.example.tilminsmukkekone.domain.classes.User;
-import com.example.tilminsmukkekone.domain.enums.EventType;
-import com.example.tilminsmukkekone.infrastructure.repositories.EventDB;
 import com.example.tilminsmukkekone.infrastructure.repositories.UserDB;
 import com.example.tilminsmukkekone.infrastructure.util.ServiceException;
 import com.example.tilminsmukkekone.util.Exceptions.InvalidCredentialsException;
 import com.example.tilminsmukkekone.util.Exceptions.UserNotFoundException;
+import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.time.temporal.ChronoUnit;
 import java.util.*;
-import java.util.stream.Collectors;
 
+@Service
 public class UserService {
 
-    UserDB userDB;
-    EventDB eventDB;
+    private final UserDB userDB;
+
+    @Autowired
+    public UserService(UserDB userDB) {
+        this.userDB = userDB;
+    }
 
     public User authenticate(String username, String password) {
         Optional<User> userOptional = userDB.findByUsername(username);
@@ -78,41 +80,6 @@ public class UserService {
         }
 
         return existingUser;
-    }
-
-    public long getDaysUntilAnniversary(Long userId) {
-        Optional<User> existingUserOptional = userDB.findById(userId);
-        if (!existingUserOptional.isPresent()) {
-            throw new UserNotFoundException(userId);
-        }
-
-        User existingUser = existingUserOptional.get();
-        LocalDate today = LocalDate.now();
-        LocalDate anniversaryDate = existingUser.getAnniversary();
-
-        LocalDate nextAnniversary = anniversaryDate.withYear(today.getYear());
-        if (nextAnniversary.isBefore(today) || nextAnniversary.isEqual(today)) {
-            nextAnniversary = nextAnniversary.plusYears(1);
-        }
-
-        return ChronoUnit.DAYS.between(today, nextAnniversary);
-    }
-
-    public List<Event> getRelationshipMilestones(Long userId) {
-        Optional<User> existingUserOptional = userDB.findById(userId);
-        if (!existingUserOptional.isPresent()) {
-            throw new UserNotFoundException(userId);
-        }
-
-        List<Event> allUserEvents = eventDB.findByParticipantId(userId);
-
-        List<Event> milestones = allUserEvents.stream()
-                .filter(event -> event.getType() == EventType.MILESTONE ||
-                        event.getType() == EventType.ANNIVERSARY)
-                .sorted(Comparator.comparing(Event::getEventDate))
-                .collect(Collectors.toList());
-
-        return milestones;
     }
 
     public User getUserById(Long userId) {

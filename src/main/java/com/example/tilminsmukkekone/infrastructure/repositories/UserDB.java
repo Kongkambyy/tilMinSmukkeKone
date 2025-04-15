@@ -2,7 +2,8 @@ package com.example.tilminsmukkekone.infrastructure.repositories;
 
 import com.example.tilminsmukkekone.domain.classes.User;
 import com.example.tilminsmukkekone.infrastructure.util.DatabaseException;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.sql.ResultSet;
@@ -10,11 +11,12 @@ import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
-@Component
+@Repository
 public class UserDB {
 
     private final DatabaseOperations dbOps;
 
+    @Autowired
     public UserDB(DataSource dataSource) {
         this.dbOps = new DatabaseOperations(dataSource);
     }

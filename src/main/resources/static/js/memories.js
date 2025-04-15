@@ -1,4 +1,4 @@
-﻿document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     // Elements
     const uploadBtn = document.getElementById('upload-btn');
     const modal = document.getElementById('upload-modal');

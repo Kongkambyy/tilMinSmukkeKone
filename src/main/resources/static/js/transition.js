@@ -1,4 +1,4 @@
-﻿document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const loginButton = document.querySelector('.a3');
 
     if (loginButton && loginButton.getAttribute('href') === '/login') {
