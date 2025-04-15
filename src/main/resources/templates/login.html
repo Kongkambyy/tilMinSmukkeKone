@@ -112,27 +112,28 @@
                         </div>
                         <div class="div8">
                             <div class="div9">
-                                <div class="h-2">
-                                    <div class="et-sted-der-gemmer-alle-vores-minder">
-                                        Et sted der gemmer alle vores minder
+                                <form action="/login" method="post" id="loginForm">
+                                    <div class="h-2" style="height: auto; margin-bottom: 20px;">
+                                        <input type="text" name="username" placeholder="Brugernavn"
+                                               style="width: 80%; height: 40px; padding: 0 10px;
+                          border: 2px solid #bd1e1e; border-radius: 8px;
+                          font-family: 'Inter-Regular', sans-serif; font-size: 16px;
+                          color: #7a1713; background-color: rgba(255, 255, 255, 0.9);">
                                     </div>
-                                </div>
-                                <div class="div10">
-                                    <div class="p2">
-                                        <div class="hjemmesiden-er-dedikeret-til-at-dokumentere-de-vigtigste-minder-fra-vores-forhold-og-holde-styr-på-fremtidige-minder">
-                                            Hjemmesiden er dedikeret til at dokumentere de vigtigste
-                                            minder fra vores forhold, og holde styr på fremtidige
-                                            minder
-                                        </div>
+                                    <div class="div10" style="top: auto; margin-bottom: 20px;">
+                                        <input type="password" name="password" placeholder="Adgangskode"
+                                               style="width: 80%; height: 40px; padding: 0 10px;
+                          border: 2px solid #bd1e1e; border-radius: 8px;
+                          font-family: 'Inter-Regular', sans-serif; font-size: 16px;
+                          color: #7a1713; background-color: rgba(255, 255, 255, 0.9);">
                                     </div>
-                                </div>
-                                <div class="div11">
-                                    <a href="/login" class="a3">
-                                        <div class="log-ind">Log ind</div>
-                                    </a>
-                                </div>
+                                    <div class="div11">
+                                        <button type="submit" class="a3" style="border: none; cursor: pointer;">
+                                            <div class="log-ind">Log ind</div>
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -164,5 +165,4 @@
         </div>
     </div>
 </div>
-</body>
 </html>
