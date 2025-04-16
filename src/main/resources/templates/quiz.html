@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz | Til Min Smukke Kone</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap">
+  <link rel="stylesheet" href="/css/vars.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    /* Quiz specific styles */
+    .quiz-section {
+      padding: 40px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .quiz-container {
+      width: 90%;
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(122, 23, 19, 0.1);
+      padding: 30px;
+      text-align: center;
+    }
+
+    .quiz-title {
+      font-family: 'Ubuntu', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: #7a1713;
+      margin: 0 0 20px;
+    }
+
+    .quiz-subtitle {
+      font-family: 'Ubuntu', sans-serif;
+      font-size: 18px;
+      color: #7a1713;
+      margin: 0 0 40px;
+    }
+
+    .quiz-categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .quiz-category {
+      background-color: #f9d6c1;
+      border: 2px solid #bd1e1e;
+      border-radius: 10px;
+      padding: 20px 15px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+    }
+
+    .quiz-category:hover {
+      transform: translateY(-5px);
+      background-color: #f6c7ad;
+    }
+
+    .category-icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .category-title {
+      font-weight: 600;
+      color: #7a1713;
+      margin-bottom: 5px;
+    }
+
+    .category-description {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .quiz-start-btn {
+      background-color: #bd1e1e;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 12px 30px;
+      font-size: 18px;
+      font-family: 'Ubuntu', sans-serif;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      margin: 20px 0;
+    }
+
+    .quiz-start-btn:hover {
+      background-color: #a51b1b;
+      transform: scale(1.03);
+    }
+
+    .under-development {
+      background-color: #f9d6c1;
+      border-radius: 10px;
+      padding: 20px 30px;
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .under-development h2 {
+      color: #7a1713;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+<div class="body">
+  <!-- Top notification bar -->
+  <div class="div">
+    <div class="div2">
+      <div class="div3">
+        <div class="div4">
+          <div class="p">
+            <div class="span">
+              <div class="velkommen-til-vores-k-rlighedsside">
+                Velkommen til vores kærlighedsside
+              </div>
+              <img class="image-258" src="/images/image-258.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header section -->
+  <div class="div5">
+    <div class="sticky-header">
+      <div class="header">
+        <div class="nav">
+          <div class="ul">
+            <!-- Home button -->
+            <div class="li">
+              <a href="/" class="a">
+                <div class="span2">
+                  <div class="hjem">Hjem</div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Memories button -->
+            <div class="li2">
+              <a href="/memories" class="a" style="text-decoration: none;">
+                <div class="header-menu">
+                  <div class="details">
+                    <div class="summary">
+                      <div class="span3">
+                        <div class="minder">Minder</div>
+                      </div>
+                      <svg class="svg" width="10" height="6" viewBox="0 0 10 6">
+                        <path d="M1 1L5 5L9 1" stroke="#7A1713" stroke-width="1.5" fill="none"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Quiz button - active -->
+            <div class="li3" style="cursor: pointer;">
+              <a href="/quiz" class="a" style="text-decoration: none;">
+                <div class="header-menu2">
+                  <div class="details2">
+                    <div class="summary2">
+                      <div class="span4">
+                        <div class="quiz">Quiz</div>
+                      </div>
+                      <svg class="svg2" width="10" height="6" viewBox="0 0 10 6">
+                        <path d="M1 1L5 5L9 1" stroke="#7A1713" stroke-width="1.5" fill="none"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Calendar button -->
+            <div class="li4" style="cursor: pointer;">
+              <a href="/kalendar" class="a" style="text-decoration: none;">
+                <div class="a2">
+                  <div class="span5">
+                    <div class="kalendar">Kalendar</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Photos button -->
+            <div class="li5" style="cursor: pointer;">
+              <a href="/billeder" class="a" style="text-decoration: none;">
+                <div class="header-menu3">
+                  <div class="details3">
+                    <div class="summary3">
+                      <div class="span6">
+                        <div class="billeder-af-os">Billeder af os</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- To You button -->
+            <div class="li6" style="cursor: pointer;">
+              <a href="/til-dig" class="a" style="text-decoration: none;">
+                <div class="til-dig">Til dig</div>
+                <div class="header-menu4">
+                  <div class="details4">
+                    <div class="summary4">
+                      <div class="span7">
+                        <img class="image-259" src="/images/image-259.png" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <img class="image-262" src="/images/image-262.png" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Main content with background -->
+  <div class="main">
+    <div class="section">
+      <div class="slideshow-component">
+        <div class="div6">
+          <div class="div6">
+            <div class="div7">
+              <img class="img" src="/images/img0.png" />
+            </div>
+            <div class="div8">
+              <!-- Quiz content -->
+              <div class="quiz-section">
+                <div class="quiz-container">
+                  <h1 class="quiz-title" th:text="${pageTitle}">Quiz om vores forhold</h1>
+                  <p class="quiz-subtitle">Test hvor godt I kender hinanden med sjove spørgsmål!</p>
+
+                  <!-- Under development notice -->
+                  <div class="under-development">
+                    <h2>Under udvikling</h2>
+                    <p>Quiz funktionen er snart klar! I mellemtiden kan du udforske de andre dele af hjemmesiden.</p>
+                  </div>
+
+                  <!-- Quiz categories -->
+                  <h2 style="color: #7a1713; margin-bottom: 20px;">Vælg en kategori</h2>
+                  <div class="quiz-categories">
+                    <div class="quiz-category">
+                      <div class="category-icon">💖</div>
+                      <h3 class="category-title">Personlige Præferencer</h3>
+                      <p class="category-description">Spørgsmål om hinandens yndlingsfarver, mad, osv.</p>
+                    </div>
+
+                    <div class="quiz-category">
+                      <div class="category-icon">🎭</div>
+                      <h3 class="category-title">Minder</h3>
+                      <p class="category-description">Hvor godt husker I jeres fælles oplevelser?</p>
+                    </div>
+
+                    <div class="quiz-category">
+                      <div class="category-icon">🔮</div>
+                      <h3 class="category-title">Fremtidsplaner</h3>
+                      <p class="category-description">Hvad ønsker I for jeres fremtid sammen?</p>
+                    </div>
+
+                    <div class="quiz-category">
+                      <div class="category-icon">😂</div>
+                      <h3 class="category-title">Interne Jokes</h3>
+                      <p class="category-description">Jeres særlige humor og indforståede vittigheder</p>
+                    </div>
+                  </div>
+
+                  <button class="quiz-start-btn">Start Quiz</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="div12">
+      <div class="section2">
+        <div class="div13">
+          <div class="div14">
+            <div class="div15">
+              <div class="ul2">
+                <div class="li7">
+                  <div class="span8"></div>
+                </div>
+                <div class="li8">
+                  <div class="span9">
+                    <div class="minder-fra-hele-vores-forhold">
+                      Minder fra hele vores forhold
+                    </div>
+                  </div>
+                </div>
+                <div class="velkommen-til-vores-k-rlighedsside2">
+                  Velkommen til vores kærlighedsside
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

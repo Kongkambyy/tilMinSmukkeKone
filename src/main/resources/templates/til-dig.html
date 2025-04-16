@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Til Dig | Til Min Smukke Kone</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="/css/vars.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* Specific styles for Til Dig page */
+        .love-section {
+            padding: 40px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .love-container {
+            width: 90%;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.92);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(122, 23, 19, 0.1);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .love-title {
+            font-family: 'Ubuntu', serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: #7a1713;
+            margin: 0 0 30px;
+        }
+
+        .counter-box {
+            background-color: rgba(255, 255, 255, 0.95);
+            border: 2px solid #bd1e1e;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .counter-heading {
+            font-size: 18px;
+            color: #7a1713;
+            margin-bottom: 15px;
+        }
+
+        .days-together {
+            font-size: 48px;
+            font-weight: 700;
+            color: #bd1e1e;
+            margin: 5px 0;
+        }
+
+        .days-text {
+            font-size: 20px;
+            color: #7a1713;
+            margin: 0 0 20px;
+        }
+
+        .countdown-heading {
+            font-size: 18px;
+            color: #7a1713;
+            margin: 20px 0 15px;
+        }
+
+        .countdown-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .countdown-box {
+            background-color: #bd1e1e;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            min-width: 70px;
+        }
+
+        .countdown-value {
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .countdown-label {
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+
+        .love-game-box {
+            background-color: rgba(255, 255, 255, 0.95);
+            border: 2px solid #bd1e1e;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .game-heading {
+            font-size: 24px;
+            color: #7a1713;
+            margin-bottom: 10px;
+        }
+
+        .game-icon {
+            font-size: 36px;
+            margin: 10px 0;
+        }
+
+        .game-text {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .coupon-button {
+            background-color: #bd1e1e;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            padding: 12px 25px;
+            font-size: 16px;
+            font-family: 'Ubuntu', sans-serif;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            margin-bottom: 20px;
+        }
+
+        .coupon-button:hover {
+            background-color: #a51b1b;
+            transform: scale(1.03);
+        }
+
+        .coupon-result {
+            background-color: #f9d6c1;
+            border: 1px dashed #bd1e1e;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 18px;
+            color: #7a1713;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+<div class="body">
+    <!-- Top notification bar -->
+    <div class="div">
+        <div class="div2">
+            <div class="div3">
+                <div class="div4">
+                    <div class="p">
+                        <div class="span">
+                            <div class="velkommen-til-vores-k-rlighedsside">
+                                Velkommen til vores kærlighedsside
+                            </div>
+                            <img class="image-258" src="/images/image-258.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header section -->
+    <div class="div5">
+        <div class="sticky-header">
+            <div class="header">
+                <div class="nav">
+                    <div class="ul">
+                        <div class="li">
+                            <a href="/" class="a">
+                                <div class="span2">
+                                    <div class="hjem">Hjem</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="li2">
+                            <a href="/memories" class="a" style="text-decoration: none;">
+                                <div class="header-menu">
+                                    <div class="details">
+                                        <div class="summary">
+                                            <div class="span3">
+                                                <div class="minder">Minder</div>
+                                            </div>
+                                            <svg class="svg" width="10" height="6" viewBox="0 0 10 6">
+                                                <path d="M1 1L5 5L9 1" stroke="#7A1713" stroke-width="1.5" fill="none"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="li3">
+                            <div class="header-menu2">
+                                <div class="details2">
+                                    <div class="summary2">
+                                        <div class="span4">
+                                            <div class="quiz">Quiz</div>
+                                        </div>
+                                        <svg class="svg2" width="10" height="6" viewBox="0 0 10 6">
+                                            <path d="M1 1L5 5L9 1" stroke="#7A1713" stroke-width="1.5" fill="none"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="li4">
+                            <div class="a2">
+                                <div class="span5">
+                                    <div class="kalendar">Kalendar</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="li5">
+                            <div class="header-menu3">
+                                <div class="details3">
+                                    <div class="summary3">
+                                        <div class="span6">
+                                            <div class="billeder-af-os">Billeder af os</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Updated Til Dig navigation -->
+                        <div class="li6" style="cursor: pointer;">
+                            <a href="/til-dig" class="a" style="text-decoration: none;">
+                                <div class="til-dig">Til dig</div>
+                                <div class="header-menu4">
+                                    <div class="details4">
+                                        <div class="summary4">
+                                            <div class="span7">
+                                                <img class="image-259" src="/images/image-259.png" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <img class="image-262" src="/images/image-262.png" />
+            </div>
+        </div>
+    </div>
+
+    <!-- Main content with background -->
+    <div class="main">
+        <div class="section">
+            <div class="slideshow-component">
+                <div class="div6">
+                    <div class="div6">
+                        <div class="div7">
+                            <img class="img" src="/images/img0.png" />
+                        </div>
+                        <div class="div8">
+                            <!-- Love page content -->
+                            <div class="love-section">
+                                <div class="love-container">
+                                    <h1 class="love-title">Specielt Til Dig ❤️</h1>
+
+                                    <!-- Days together counter -->
+                                    <div class="counter-box">
+                                        <h2 class="counter-heading">Vi har været sammen i:</h2>
+                                        <div class="days-together" th:text="${daysTogether}">1,234</div>
+                                        <div class="days-text">dage</div>
+
+                                        <h2 class="countdown-heading">Nedtælling til næste årsdag:</h2>
+                                        <div class="countdown-container">
+                                            <div class="countdown-box">
+                                                <div id="countdown-days" class="countdown-value">0</div>
+                                                <div class="countdown-label">Dage</div>
+                                            </div>
+                                            <div class="countdown-box">
+                                                <div id="countdown-hours" class="countdown-value">0</div>
+                                                <div class="countdown-label">Timer</div>
+                                            </div>
+                                            <div class="countdown-box">
+                                                <div id="countdown-minutes" class="countdown-value">0</div>
+                                                <div class="countdown-label">Min</div>
+                                            </div>
+                                            <div class="countdown-box">
+                                                <div id="countdown-seconds" class="countdown-value">0</div>
+                                                <div class="countdown-label">Sek</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Love game box -->
+                                    <div class="love-game-box">
+                                        <h2 class="game-heading">Dagens Kærlighedsspil</h2>
+                                        <div class="game-icon">💌</div>
+                                        <p class="game-text">Klik for at få en sød idé eller opgave!</p>
+
+                                        <button id="generate-coupon" class="coupon-button">Generér Kærlighedskupon</button>
+
+                                        <div id="coupon-result" class="coupon-result" th:text="${loveCoupon}">
+                                            <!-- Coupon text will appear here -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="div12">
+            <div class="section2">
+                <div class="div13">
+                    <div class="div14">
+                        <div class="div15">
+                            <div class="ul2">
+                                <div class="li7">
+                                    <div class="span8"></div>
+                                </div>
+                                <div class="li8">
+                                    <div class="span9">
+                                        <div class="minder-fra-hele-vores-forhold">
+                                            Minder fra hele vores forhold
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="velkommen-til-vores-k-rlighedsside2">
+                                    Velkommen til vores kærlighedsside
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript for countdown and coupon generator -->
+<script th:inline="javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get anniversary date from Thymeleaf
+        const nextAnniversaryDate = /*[[${nextAnniversaryDate}]]*/ '2026-02-04';
+
+        // Get all love coupons
+        const allCoupons = /*[[${allCoupons}]]*/ [];
+
+        // Elements
+        const countdownDays = document.getElementById('countdown-days');
+        const countdownHours = document.getElementById('countdown-hours');
+        const countdownMinutes = document.getElementById('countdown-minutes');
+        const countdownSeconds = document.getElementById('countdown-seconds');
+        const generateButton = document.getElementById('generate-coupon');
+        const couponResult = document.getElementById('coupon-result');
+
+        // Start countdown
+        startCountdown(nextAnniversaryDate);
+
+        // Add event listener for coupon generator
+        generateButton.addEventListener('click', function() {
+            generateNewCoupon();
+        });
+
+        // Countdown function
+        function startCountdown(targetDateStr) {
+            // Set the date we're counting down to
+            const targetDate = new Date(targetDateStr + 'T00:00:00');
+
+            // Update the countdown every 1 second
+            const countdownInterval = setInterval(function() {
+                // Get current date and time
+                const now = new Date().getTime();
+
+                // Find the distance between now and the countdown date
+                const distance = targetDate - now;
+
+                // If the countdown is over, display zeros
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    countdownDays.textContent = "0";
+                    countdownHours.textContent = "0";
+                    countdownMinutes.textContent = "0";
+                    countdownSeconds.textContent = "0";
+                    return;
+                }
+
+                // Time calculations for days, hours, minutes and seconds
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Display the result
+                countdownDays.textContent = days;
+                countdownHours.textContent = hours;
+                countdownMinutes.textContent = minutes;
+                countdownSeconds.textContent = seconds;
+            }, 1000);
+        }
+
+        // Generate new coupon
+        function generateNewCoupon() {
+            // Disable button temporarily and add animation
+            generateButton.disabled = true;
+            generateButton.textContent = "Genererer...";
+            couponResult.style.opacity = "0.3";
+
+            // Add a small delay for animation effect
+            setTimeout(function() {
+                // Get a random coupon - either from the array or fetch a new one
+                if (allCoupons && allCoupons.length > 0) {
+                    // Use client-side array for faster response
+                    const randomIndex = Math.floor(Math.random() * allCoupons.length);
+                    updateCouponDisplay(allCoupons[randomIndex]);
+                } else {
+                    // Fallback to server API
+                    fetch('/api/love-coupon')
+                        .then(response => response.json())
+                        .then(data => {
+                            updateCouponDisplay(data.coupon);
+                        })
+                        .catch(error => {
+                            console.error('Error fetching coupon:', error);
+                            updateCouponDisplay('En særlig overraskelse til dig ❤️');
+                        });
+                }
+            }, 500);
+        }
+
+        function updateCouponDisplay(couponText) {
+            // Update the result
+            couponResult.textContent = couponText;
+            couponResult.style.opacity = "1";
+
+            // Re-enable button
+            generateButton.disabled = false;
+            generateButton.textContent = "Generér Kærlighedskupon";
+
+            // Add animation to the result
+            couponResult.style.animation = "pulse 0.5s";
+            setTimeout(() => {
+                couponResult.style.animation = "";
+            }, 500);
+        }
+    });
+</script>
+</body>
+</html>

@@ -195,6 +195,25 @@ public class EventDB {
         }
     }
 
+    public List<Event> findUpcomingEventsWithinAMonth () {
+        try {
+            String sql = "SELECT * FROM events WHERE event_date > NOW() AND event_date < DATE_ADD(NOW(), INTERVAL 1 MONTH) ORDER BY event_date ASC";
+            List<Event> events = dbOps.executeQuery(sql, null, this::mapResultSetToEvent);
+
+            for (Event event : events) {
+                event.setParticipants(findParticipantsByEventId(event.getId()));
+                event.setRelatedMemories(findRelatedMemoriesByEventId(event.getId()));
+            }
+
+            return events;
+
+        } catch (SQLException e) {
+            throw DatabaseException.readError("upcoming_events", "future", e);
+        }
+
+
+    }
+
     public List<Event> findUpcomingEvents() {
         try {
             String sql = "SELECT * FROM events WHERE event_date > NOW() ORDER BY event_date ASC";

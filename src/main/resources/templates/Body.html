@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,64 +37,73 @@
                             </a>
                         </div>
                         <div class="li2">
-                            <div class="header-menu">
-                                <div class="details">
-                                    <div class="summary">
-                                        <div class="span3">
-                                            <div class="minder">Minder</div>
-                                        </div>
-                                        <!-- Replace with SVG directly -->
-                                        <svg class="svg" width="10" height="6" viewBox="0 0 10 6">
-                                            <path d="M1 1L5 5L9 1" stroke="#7A1713" stroke-width="1.5" fill="none"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="li3">
-                            <div class="header-menu2">
-                                <div class="details2">
-                                    <div class="summary2">
-                                        <div class="span4">
-                                            <div class="quiz">Quiz</div>
-                                        </div>
-                                        <!-- Replace with SVG directly -->
-                                        <svg class="svg2" width="10" height="6" viewBox="0 0 10 6">
-                                            <path d="M1 1L5 5L9 1" stroke="#7A1713" stroke-width="1.5" fill="none"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="li4">
-                            <div class="a2">
-                                <div class="span5">
-                                    <div class="kalendar">Kalendar</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="li5">
-                            <div class="header-menu3">
-                                <div class="details3">
-                                    <div class="summary3">
-                                        <div class="span6">
-                                            <div class="billeder-af-os">Billeder af os</div>
+                            <a href="/memories" class="a" style="text-decoration: none;">
+                                <div class="header-menu">
+                                    <div class="details">
+                                        <div class="summary">
+                                            <div class="span3">
+                                                <div class="minder">Minder</div>
+                                            </div>
+                                            <svg class="svg" width="10" height="6" viewBox="0 0 10 6">
+                                                <path d="M1 1L5 5L9 1" stroke="#7A1713" stroke-width="1.5" fill="none"/>
+                                            </svg>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                        <div class="til-dig">Til dig</div>
-                        <div class="li6">
-                            <div class="header-menu4">
-                                <div class="details4">
-                                    <div class="summary4">
-                                        <div class="span7">
-                                            <img class="image-259" src="/images/image-259.png" />
+                        <div class="li3" style="cursor: pointer;">
+                            <a href="/quiz" class="a" style="text-decoration: none;">
+                                <div class="header-menu2">
+                                    <div class="details2">
+                                        <div class="summary2">
+                                            <div class="span4">
+                                                <div class="quiz">Quiz</div>
+                                            </div>
+                                            <svg class="svg2" width="10" height="6" viewBox="0 0 10 6">
+                                                <path d="M1 1L5 5L9 1" stroke="#7A1713" stroke-width="1.5" fill="none"/>
+                                            </svg>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
+                        </div>
+                        <div class="li4" style="cursor: pointer;">
+                            <a href="/kalendar" class="a" style="text-decoration: none;">
+                                <div class="a2">
+                                    <div class="span5">
+                                        <div class="kalendar">Kalendar</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="li5" style="cursor: pointer;">
+                            <a href="/billeder" class="a" style="text-decoration: none;">
+                                <div class="header-menu3">
+                                    <div class="details3">
+                                        <div class="summary3">
+                                            <div class="span6">
+                                                <div class="billeder-af-os">Billeder af os</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Updated Til Dig navigation -->
+                        <div class="li6" style="cursor: pointer;">
+                            <a href="/til-dig" class="a" style="text-decoration: none;">
+                                <div class="til-dig">Til dig</div>
+                                <div class="header-menu4">
+                                    <div class="details4">
+                                        <div class="summary4">
+                                            <div class="span7">
+                                                <img class="image-259" src="/images/image-259.png" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -111,7 +120,8 @@
                             <img class="img" src="/images/img0.png" />
                         </div>
                         <div class="div8">
-                            <div class="div9">
+                            <!-- Content for not logged in users -->
+                            <div class="div9" th:if="${!isLoggedIn}">
                                 <div class="h-2">
                                     <div class="et-sted-der-gemmer-alle-vores-minder">
                                         Et sted der gemmer alle vores minder
@@ -119,9 +129,7 @@
                                 </div>
                                 <div class="div10">
                                     <div class="p2">
-                                        <div
-                                                class="hjemmesiden-er-dedikeret-til-at-dokumentere-de-vigtigste-minder-fra-vores-forhold-og-holde-styr-p-fremtidige-minder"
-                                        >
+                                        <div class="hjemmesiden-er-dedikeret-til-at-dokumentere-de-vigtigste-minder-fra-vores-forhold-og-holde-styr-p-fremtidige-minder">
                                             Hjemmesiden er dedikeret til at dokumentere de vigtigste
                                             minder fra vores forhold, og holde styr på fremtidige
                                             minder
@@ -132,6 +140,23 @@
                                     <a href="/login" class="a3">
                                         <div class="log-ind">Log ind</div>
                                     </a>
+                                </div>
+                            </div>
+
+                            <!-- Content for logged in users -->
+                            <div class="div9" th:if="${isLoggedIn}">
+                                <div class="h-2">
+                                    <div class="et-sted-der-gemmer-alle-vores-minder">
+                                        Du er nu logget ind ❤️
+                                    </div>
+                                </div>
+                                <div class="div10">
+                                    <div class="p2">
+                                        <div class="hjemmesiden-er-dedikeret-til-at-dokumentere-de-vigtigste-minder-fra-vores-forhold-og-holde-styr-p-fremtidige-minder">
+                                            Velkommen tilbage! Nu kan du se og dele minder, begivenheder,
+                                            og meget mere. Klik på "Minder" ovenfor for at komme i gang.
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Minder | Til Min Smukke Kone</title>
@@ -7,144 +7,203 @@
     <link rel="stylesheet" href="/css/vars.css">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/memories.css">
+    <style>
+        /* Override styles for better visibility */
+        .memory-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.92);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(122, 23, 19, 0.1);
+        }
+
+        .memory-card {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 3px 10px rgba(122, 23, 19, 0.15);
+        }
+
+        .modal-content {
+            background-color: rgba(255, 255, 255, 1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+    </style>
 </head>
 <body>
 <div class="body">
     <!-- Top notification bar -->
-    <div class="top-notification">
-        <div class="container">
-            Velkommen til vores kærlighedsside
-            <img class="image-258" src="/images/image-258.png" />
+    <div class="div">
+        <div class="div2">
+            <div class="div3">
+                <div class="div4">
+                    <div class="p">
+                        <div class="span">
+                            <div class="velkommen-til-vores-k-rlighedsside">
+                                Velkommen til vores kærlighedsside
+                            </div>
+                            <img class="image-258" src="/images/image-258.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Header section -->
-    <div class="header-container">
-        <!-- Logo -->
-        <div class="logo-container">
-            <img src="/images/image-262.png" alt="J S Hearts Logo" class="logo-image">
+    <div class="div5">
+        <div class="sticky-header">
+            <div class="header">
+                <div class="nav">
+                    <div class="ul">
+                        <div class="li">
+                            <a href="/" class="a">
+                                <div class="span2">
+                                    <div class="hjem">Hjem</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="li2">
+                            <a href="/memories" class="a" style="text-decoration: none;">
+                                <div class="header-menu">
+                                    <div class="details">
+                                        <div class="summary">
+                                            <div class="span3">
+                                                <div class="minder">Minder</div>
+                                            </div>
+                                            <svg class="svg" width="10" height="6" viewBox="0 0 10 6">
+                                                <path d="M1 1L5 5L9 1" stroke="#7A1713" stroke-width="1.5" fill="none"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="li3" style="cursor: pointer;">
+                            <a href="/quiz" class="a" style="text-decoration: none;">
+                                <div class="header-menu2">
+                                    <div class="details2">
+                                        <div class="summary2">
+                                            <div class="span4">
+                                                <div class="quiz">Quiz</div>
+                                            </div>
+                                            <svg class="svg2" width="10" height="6" viewBox="0 0 10 6">
+                                                <path d="M1 1L5 5L9 1" stroke="#7A1713" stroke-width="1.5" fill="none"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="li4" style="cursor: pointer;">
+                            <a href="/kalendar" class="a" style="text-decoration: none;">
+                                <div class="a2">
+                                    <div class="span5">
+                                        <div class="kalendar">Kalendar</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="li5" style="cursor: pointer;">
+                            <a href="/billeder" class="a" style="text-decoration: none;">
+                                <div class="header-menu3">
+                                    <div class="details3">
+                                        <div class="summary3">
+                                            <div class="span6">
+                                                <div class="billeder-af-os">Billeder af os</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Updated Til Dig navigation -->
+                        <div class="li6" style="cursor: pointer;">
+                            <a href="/til-dig" class="a" style="text-decoration: none;">
+                                <div class="til-dig">Til dig</div>
+                                <div class="header-menu4">
+                                    <div class="details4">
+                                        <div class="summary4">
+                                            <div class="span7">
+                                                <img class="image-259" src="/images/image-259.png" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <img class="image-262" src="/images/image-262.png" />
+            </div>
         </div>
-
-        <!-- Main navigation -->
-        <nav class="main-nav">
-            <ul class="nav-list">
-                <li class="nav-item">
-                    <a href="/" class="nav-link">Hjem</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/memories" class="nav-link active">Minder</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/quiz" class="nav-link">Quiz</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/calendar" class="nav-link">Kalendar</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/photos" class="nav-link">Billeder af os</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/messages" class="nav-link heart-icon">❤</a>
-                </li>
-                <li class="nav-item nav-right">
-                    <a href="/messages" class="nav-link">Til dig</a>
-                </li>
-            </ul>
-        </nav>
     </div>
 
+    <!-- Main content with background -->
     <div class="main">
-        <div class="memory-section">
-            <div class="memory-container">
-                <div class="memory-header">
-                    <h1 class="memory-title">Vores Minder</h1>
-                    <p class="memory-subtitle">Del og gem de særlige øjeblikke fra vores forhold</p>
-                </div>
+        <div class="section">
+            <div class="slideshow-component">
+                <div class="div6">
+                    <div class="div6">
+                        <div class="div7">
+                            <img class="img" src="/images/img0.png" />
+                        </div>
+                        <div class="div8">
+                            <!-- Memory content -->
+                            <div class="memory-section">
+                                <div class="memory-container">
+                                    <div class="memory-header">
+                                        <h1 class="memory-title">Vores Minder</h1>
+                                        <p class="memory-subtitle">Del og gem de særlige øjeblikke fra vores forhold</p>
+                                    </div>
 
-                <div class="memory-controls">
-                    <div class="filter-section">
-                        <select id="memory-filter" class="memory-filter">
-                            <option value="all">Alle Minder</option>
-                            <option value="PHOTO">Billeder</option>
-                            <option value="VIDEO">Videoer</option>
-                            <option value="TEXT">Tekst</option>
-                            <option value="MILESTONE">Milepæle</option>
-                            <option value="TRIP">Rejser</option>
-                            <option value="DATE">Dates</option>
-                            <option value="GIFT">Gaver</option>
-                        </select>
-                    </div>
+                                    <div class="memory-controls">
+                                        <div class="filter-section">
+                                            <select id="memory-filter" class="memory-filter">
+                                                <option value="all">Alle Minder</option>
+                                                <option th:each="type : ${memoryTypes}"
+                                                        th:value="${type.name()}"
+                                                        th:text="${#strings.capitalize(#strings.toLowerCase(type.name()))}">
+                                                    Type
+                                                </option>
+                                            </select>
+                                        </div>
 
-                    <div class="upload-section">
-                        <button id="upload-btn" class="upload-btn">+ Tilføj nyt minde</button>
-                    </div>
-                </div>
+                                        <div class="upload-section">
+                                            <button id="upload-btn" class="upload-btn">+ Tilføj nyt minde</button>
+                                        </div>
+                                    </div>
 
-                <div id="memories-grid" class="memories-grid">
-                    <!-- Memory cards will be populated here -->
-                    <div class="memory-card" data-type="PHOTO">
-                        <div class="memory-image-container">
-                            <img src="/images/placeholders/memory1.jpg" alt="Minde 1" class="memory-image">
-                        </div>
-                        <div class="memory-info">
-                            <h3>Vores første date</h3>
-                            <p class="memory-date">12. maj 2022</p>
-                            <span class="memory-type">Billede</span>
-                        </div>
-                    </div>
+                                    <div id="memories-grid" class="memories-grid">
+                                        <!-- Dynamic Memory Cards from Database -->
+                                        <div th:if="${#lists.isEmpty(memories)}" class="no-memories-message">
+                                            <p>Ingen minder fundet. Tilføj dit første minde ved at klikke på "Tilføj nyt minde" knappen ovenfor.</p>
+                                        </div>
 
-                    <div class="memory-card" data-type="TRIP">
-                        <div class="memory-image-container">
-                            <img src="/images/placeholders/memory2.jpg" alt="Minde 2" class="memory-image">
-                        </div>
-                        <div class="memory-info">
-                            <h3>Paris tur</h3>
-                            <p class="memory-date">3. juli 2023</p>
-                            <span class="memory-type">Rejse</span>
-                        </div>
-                    </div>
-
-                    <div class="memory-card" data-type="MILESTONE">
-                        <div class="memory-image-container">
-                            <img src="/images/placeholders/memory3.jpg" alt="Minde 3" class="memory-image">
-                        </div>
-                        <div class="memory-info">
-                            <h3>1 års jubilæum</h3>
-                            <p class="memory-date">15. august 2023</p>
-                            <span class="memory-type">Milepæl</span>
-                        </div>
-                    </div>
-
-                    <div class="memory-card" data-type="DATE">
-                        <div class="memory-image-container">
-                            <img src="/images/placeholders/memory4.jpg" alt="Minde 4" class="memory-image">
-                        </div>
-                        <div class="memory-info">
-                            <h3>Restaurantbesøg</h3>
-                            <p class="memory-date">22. september 2023</p>
-                            <span class="memory-type">Date</span>
-                        </div>
-                    </div>
-
-                    <div class="memory-card" data-type="GIFT">
-                        <div class="memory-image-container">
-                            <img src="/images/placeholders/memory5.jpg" alt="Minde 5" class="memory-image">
-                        </div>
-                        <div class="memory-info">
-                            <h3>Fødselsdagsgave</h3>
-                            <p class="memory-date">10. oktober 2023</p>
-                            <span class="memory-type">Gave</span>
-                        </div>
-                    </div>
-
-                    <div class="memory-card" data-type="PHOTO">
-                        <div class="memory-image-container">
-                            <img src="/images/placeholders/memory6.jpg" alt="Minde 6" class="memory-image">
-                        </div>
-                        <div class="memory-info">
-                            <h3>Aften ved stranden</h3>
-                            <p class="memory-date">5. november 2023</p>
-                            <span class="memory-type">Billede</span>
+                                        <div th:each="memory : ${memories}"
+                                             th:data-type="${memory.memoryType.name()}"
+                                             class="memory-card">
+                                            <div class="memory-image-container">
+                                                <!-- Use first image if available, otherwise use placeholder -->
+                                                <img th:if="${not #lists.isEmpty(memory.imagePaths)}"
+                                                     th:src="${memory.imagePaths[0]}"
+                                                     th:alt="${memory.title}"
+                                                     class="memory-image">
+                                                <img th:if="${#lists.isEmpty(memory.imagePaths)}"
+                                                     src="/images/placeholders/memory-placeholder.jpg"
+                                                     th:alt="${memory.title}"
+                                                     class="memory-image">
+                                            </div>
+                                            <div class="memory-info">
+                                                <h3 th:text="${memory.title}">Memory Title</h3>
+                                                <p class="memory-date" th:text="${#temporals.format(memory.dateOfEvent, 'd. MMMM yyyy')}">Date</p>
+                                                <span class="memory-type" th:text="${#strings.capitalize(#strings.toLowerCase(memory.memoryType.name()))}">Type</span>
+                                                <span class="delete-memory" th:data-id="${memory.id}">&times;</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -156,7 +215,7 @@
             <div class="modal-content">
                 <span class="close-btn">&times;</span>
                 <h2>Tilføj nyt minde</h2>
-                <form id="memory-form">
+                <form id="memory-form" action="/memories" method="post" enctype="multipart/form-data">
                     <div class="form-group">
                         <label for="memory-title">Titel</label>
                         <input type="text" id="memory-title" name="title" required>
@@ -175,13 +234,11 @@
                     <div class="form-group">
                         <label for="memory-type-select">Type</label>
                         <select id="memory-type-select" name="type" required>
-                            <option value="PHOTO">Billede</option>
-                            <option value="VIDEO">Video</option>
-                            <option value="TEXT">Tekst</option>
-                            <option value="MILESTONE">Milepæl</option>
-                            <option value="TRIP">Rejse</option>
-                            <option value="DATE">Date</option>
-                            <option value="GIFT">Gave</option>
+                            <option th:each="type : ${memoryTypes}"
+                                    th:value="${type.name()}"
+                                    th:text="${#strings.capitalize(#strings.toLowerCase(type.name()))}">
+                                Type
+                            </option>
                         </select>
                     </div>
 
@@ -196,21 +253,193 @@
             </div>
         </div>
 
+        <!-- Footer -->
         <div class="div12">
             <div class="section2">
-                <div class="footer-text-container">
-                    <div>Minder fra hele vores forhold</div>
-                    <div>Velkommen til vores kærlighedsside</div>
-                    <div>Udforsk vores samling af særlige minder</div>
+                <div class="div13">
+                    <div class="div14">
+                        <div class="div15">
+                            <div class="ul2">
+                                <div class="li7">
+                                    <div class="span8"></div>
+                                </div>
+                                <div class="li8">
+                                    <div class="span9">
+                                        <div class="minder-fra-hele-vores-forhold">
+                                            Minder fra hele vores forhold
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="velkommen-til-vores-k-rlighedsside2">
+                                    Velkommen til vores kærlighedsside
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="page-transition"></div>
+<!-- Updated JavaScript for the memories page -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Elements
+        const uploadBtn = document.getElementById('upload-btn');
+        const modal = document.getElementById('upload-modal');
+        const closeBtn = document.querySelector('.close-btn');
+        const memoryForm = document.getElementById('memory-form');
+        const memoryFilter = document.getElementById('memory-filter');
+        const memoriesGrid = document.getElementById('memories-grid');
+        const imageInput = document.getElementById('memory-images');
+        const previewContainer = document.getElementById('preview-container');
 
-<script src="/js/transition.js"></script>
-<script src="/js/memories.js"></script>
+        // Modal functionality
+        uploadBtn.addEventListener('click', function() {
+            modal.style.display = 'block';
+        });
+
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+            resetForm();
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+                resetForm();
+            }
+        });
+
+        // Memory filtering
+        memoryFilter.addEventListener('change', function() {
+            const filterValue = this.value;
+            filterMemories(filterValue);
+        });
+
+        // Form submission with AJAX
+        memoryForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+
+            fetch('/memories', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Refresh the page to show the new memory
+                        window.location.reload();
+                    } else {
+                        alert('Der opstod en fejl: ' + data.error);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Der opstod en fejl ved tilføjelse af mindet.');
+                });
+        });
+
+        // Delete memory functionality
+        document.querySelectorAll('.delete-memory').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const memoryId = this.getAttribute('data-id');
+                if (confirm('Er du sikker på, at du vil slette dette minde?')) {
+                    deleteMemory(memoryId);
+                }
+            });
+        });
+
+        // Image preview handling
+        imageInput.addEventListener('change', handleImagePreview);
+
+        // Helper functions
+        function filterMemories(type) {
+            const memoryCards = memoriesGrid.querySelectorAll('.memory-card');
+
+            memoryCards.forEach(card => {
+                if (type === 'all' || card.dataset.type === type) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function deleteMemory(id) {
+            fetch(`/memories/${id}`, {
+                method: 'DELETE'
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Remove the card from the UI
+                        const card = document.querySelector(`.memory-card[data-id="${id}"]`);
+                        if (card) {
+                            card.remove();
+                        }
+                        // If no memories left, show message
+                        if (memoriesGrid.querySelectorAll('.memory-card').length === 0) {
+                            const message = document.createElement('div');
+                            message.className = 'no-memories-message';
+                            message.innerHTML = '<p>Ingen minder fundet. Tilføj dit første minde ved at klikke på "Tilføj nyt minde" knappen ovenfor.</p>';
+                            memoriesGrid.appendChild(message);
+                        }
+                    } else {
+                        alert('Der opstod en fejl: ' + data.error);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('Der opstod en fejl ved sletning af mindet.');
+                });
+        }
+
+        function resetForm() {
+            memoryForm.reset();
+            previewContainer.innerHTML = '';
+        }
+
+        function handleImagePreview(e) {
+            previewContainer.innerHTML = '';
+
+            const files = e.target.files;
+
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+
+                if (!file.type.match('image.*')) {
+                    continue;
+                }
+
+                const reader = new FileReader();
+
+                reader.onload = (function(file) {
+                    return function(e) {
+                        const previewItem = document.createElement('div');
+                        previewItem.className = 'preview-item';
+
+                        previewItem.innerHTML = `
+                        <img class="preview-image" src="${e.target.result}" alt="${file.name}">
+                        <div class="remove-preview" data-filename="${file.name}">×</div>
+                    `;
+
+                        previewContainer.appendChild(previewItem);
+
+                        previewItem.querySelector('.remove-preview').addEventListener('click', function() {
+                            previewItem.remove();
+                        });
+                    };
+                })(file);
+
+                reader.readAsDataURL(file);
+            }
+        }
+    });
+</script>
 </body>
 </html>

@@ -13,6 +13,7 @@ import com.example.tilminsmukkekone.util.Exceptions.EventNotFoundException;
 import com.example.tilminsmukkekone.util.Exceptions.MemoryNotFoundException;
 import com.example.tilminsmukkekone.util.Exceptions.PermissionDeniedException;
 import com.example.tilminsmukkekone.util.Exceptions.UserNotFoundException;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Kalender | Til Min Smukke Kone</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap">
+  <link rel="stylesheet" href="/css/vars.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    /* Calendar specific styles */
+    .calendar-section {
+      padding: 40px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .calendar-container {
+      width: 90%;
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(122, 23, 19, 0.1);
+      padding: 30px;
+      text-align: center;
+    }
+
+    .calendar-title {
+      font-family: 'Ubuntu', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: #7a1713;
+      margin: 0 0 30px;
+    }
+
+    .month-navigation {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .month-nav-btn {
+      background: none;
+      border: none;
+      font-size: 24px;
+      color: #7a1713;
+      cursor: pointer;
+      padding: 5px 10px;
+    }
+
+    .current-month {
+      font-size: 24px;
+      font-weight: 600;
+      color: #7a1713;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 5px;
+      margin-bottom: 30px;
+    }
+
+    .weekday-header {
+      font-weight: 600;
+      color: #7a1713;
+      padding: 10px;
+      background-color: #f9d6c1;
+      border-radius: 5px;
+    }
+
+    .calendar-day {
+      position: relative;
+      height: 70px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 5px;
+      background-color: white;
+      transition: background-color 0.2s ease;
+    }
+
+    .calendar-day:hover {
+      background-color: #f9e9e0;
+    }
+
+    .day-number {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      font-weight: 500;
+    }
+
+    .event-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background-color: #bd1e1e;
+      border-radius: 50%;
+      margin-right: 3px;
+    }
+
+    .special-day {
+      background-color: rgba(225, 98, 104, 0.2);
+    }
+
+    .today {
+      border: 2px solid #bd1e1e;
+      font-weight: bold;
+    }
+
+    .event-list {
+      margin-top: 30px;
+      text-align: left;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 10px;
+    }
+
+    .event-list h3 {
+      color: #7a1713;
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+
+    .event-item {
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .event-title {
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    .event-date {
+      font-size: 14px;
+      color: #777;
+    }
+
+    .under-development {
+      background-color: #f9d6c1;
+      border-radius: 10px;
+      padding: 20px 30px;
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .under-development h2 {
+      color: #7a1713;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+<div class="body">
+  <!-- Top notification bar -->
+  <div class="div">
+    <div class="div2">
+      <div class="div3">
+        <div class="div4">
+          <div class="p">
+            <div class="span">
+              <div class="velkommen-til-vores-k-rlighedsside">
+                Velkommen til vores kærlighedsside
+              </div>
+              <img class="image-258" src="/images/image-258.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header section -->
+  <div class="div5">
+    <div class="sticky-header">
+      <div class="header">
+        <div class="nav">
+          <div class="ul">
+            <!-- Home button -->
+            <div class="li">
+              <a href="/" class="a">
+                <div class="span2">
+                  <div class="hjem">Hjem</div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Memories button -->
+            <div class="li2">
+              <a href="/memories" class="a" style="text-decoration: none;">
+                <div class="header-menu">
+                  <div class="details">
+                    <div class="summary">
+                      <div class="span3">
+                        <div class="minder">Minder</div>
+                      </div>
+                      <svg class="svg" width="10" height="6" viewBox="0 0 10 6">
+                        <path d="M1 1L5 5L9 1" stroke="#7A1713" stroke-width="1.5" fill="none"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Quiz button -->
+            <div class="li3" style="cursor: pointer;">
+              <a href="/quiz" class="a" style="text-decoration: none;">
+                <div class="header-menu2">
+                  <div class="details2">
+                    <div class="summary2">
+                      <div class="span4">
+                        <div class="quiz">Quiz</div>
+                      </div>
+                      <svg class="svg2" width="10" height="6" viewBox="0 0 10 6">
+                        <path d="M1 1L5 5L9 1" stroke="#7A1713" stroke-width="1.5" fill="none"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Calendar button - active -->
+            <div class="li4" style="cursor: pointer;">
+              <a href="/kalendar" class="a" style="text-decoration: none;">
+                <div class="a2">
+                  <div class="span5">
+                    <div class="kalendar">Kalendar</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Photos button -->
+            <div class="li5" style="cursor: pointer;">
+              <a href="/billeder" class="a" style="text-decoration: none;">
+                <div class="header-menu3">
+                  <div class="details3">
+                    <div class="summary3">
+                      <div class="span6">
+                        <div class="billeder-af-os">Billeder af os</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- To You button -->
+            <div class="li6" style="cursor: pointer;">
+              <a href="/til-dig" class="a" style="text-decoration: none;">
+                <div class="til-dig">Til dig</div>
+                <div class="header-menu4">
+                  <div class="details4">
+                    <div class="summary4">
+                      <div class="span7">
+                        <img class="image-259" src="/images/image-259.png" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <img class="image-262" src="/images/image-262.png" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Main content with background -->
+  <div class="main">
+    <div class="section">
+      <div class="slideshow-component">
+        <div class="div6">
+          <div class="div6">
+            <div class="div7">
+              <img class="img" src="/images/img0.png" />
+            </div>
+            <div class="div8">
+              <!-- Calendar content -->
+              <div class="calendar-section">
+                <div class="calendar-container">
+                  <h1 class="calendar-title">Vores Kalender</h1>
+
+                  <!-- Under development notice -->
+                  <div class="under-development">
+                    <h2>Under udvikling</h2>
+                    <p>Kalenderfunktionen er snart klar! I mellemtiden kan du udforske de andre dele af hjemmesiden.</p>
+                  </div>
+
+                  <!-- Month navigation -->
+                  <div class="month-navigation">
+                    <button class="month-nav-btn">❮</button>
+                    <div class="current-month" th:text="${currentMonth + ' ' + currentYear}">April 2025</div>
+                    <button class="month-nav-btn">❯</button>
+                  </div>
+
+                  <!-- Calendar grid -->
+                  <div class="calendar-grid">
+                    <!-- Weekday headers -->
+                    <div class="weekday-header">Man</div>
+                    <div class="weekday-header">Tir</div>
+                    <div class="weekday-header">Ons</div>
+                    <div class="weekday-header">Tor</div>
+                    <div class="weekday-header">Fre</div>
+                    <div class="weekday-header">Lør</div>
+                    <div class="weekday-header">Søn</div>
+
+                    <!-- Calendar days would be generated dynamically -->
+                    <!-- Example of a normal day -->
+                    <div class="calendar-day">
+                      <div class="day-number">1</div>
+                    </div>
+
+                    <!-- Example of a day with an event -->
+                    <div class="calendar-day">
+                      <div class="day-number">2</div>
+                      <div class="event-dot"></div>
+                    </div>
+
+                    <!-- Example of today -->
+                    <div class="calendar-day today">
+                      <div class="day-number">16</div>
+                      <div class="event-dot"></div>
+                    </div>
+
+                    <!-- Example of a special day -->
+                    <div class="calendar-day special-day">
+                      <div class="day-number">4</div>
+                      <span style="font-size: 11px; color: #7a1713;">Årsdag</span>
+                    </div>
+
+                    <!-- Placeholder days to fill out the grid -->
+                    <div class="calendar-day">
+                      <div class="day-number">3</div>
+                    </div>
+                    <div class="calendar-day">
+                      <div class="day-number">5</div>
+                    </div>
+                    <div class="calendar-day">
+                      <div class="day-number">6</div>
+                    </div>
+                    <div class="calendar-day">
+                      <div class="day-number">7</div>
+                    </div>
+                    <!-- More days would be generated here -->
+                  </div>
+
+                  <!-- Upcoming events list -->
+                  <div class="event-list">
+                    <h3>Kommende begivenheder</h3>
+                    <div class="event-item">
+                      <div class="event-title">Middag på Noma</div>
+                      <div class="event-date">16. april 2025, 19:00</div>
+                    </div>
+                    <div class="event-item">
+                      <div class="event-title">Besøg hos Janes forældre</div>
+                      <div class="event-date">20. april 2025, 13:00</div>
+                    </div>
+                    <div class="event-item">
+                      <div class="event-title">Biograftur - Nye Film</div>
+                      <div class="event-date">25. april 2025, 20:15</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="div12">
+      <div class="section2">
+        <div class="div13">
+          <div class="div14">
+            <div class="div15">
+              <div class="ul2">
+                <div class="li7">
+                  <div class="span8"></div>
+                </div>
+                <div class="li8">
+                  <div class="span9">
+                    <div class="minder-fra-hele-vores-forhold">
+                      Minder fra hele vores forhold
+                    </div>
+                  </div>
+                </div>
+                <div class="velkommen-til-vores-k-rlighedsside2">
+                  Velkommen til vores kærlighedsside
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

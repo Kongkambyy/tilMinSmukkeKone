@@ -37,62 +37,73 @@
                             </a>
                         </div>
                         <div class="li2">
-                            <div class="header-menu">
-                                <div class="details">
-                                    <div class="summary">
-                                        <div class="span3">
-                                            <div class="minder">Minder</div>
-                                        </div>
-                                        <svg class="svg" width="10" height="6" viewBox="0 0 10 6">
-                                            <path d="M1 1L5 5L9 1" stroke="#7A1713" stroke-width="1.5" fill="none"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="li3">
-                            <div class="header-menu2">
-                                <div class="details2">
-                                    <div class="summary2">
-                                        <div class="span4">
-                                            <div class="quiz">Quiz</div>
-                                        </div>
-                                        <svg class="svg2" width="10" height="6" viewBox="0 0 10 6">
-                                            <path d="M1 1L5 5L9 1" stroke="#7A1713" stroke-width="1.5" fill="none"/>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="li4">
-                            <div class="a2">
-                                <div class="span5">
-                                    <div class="kalendar">Kalendar</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="li5">
-                            <div class="header-menu3">
-                                <div class="details3">
-                                    <div class="summary3">
-                                        <div class="span6">
-                                            <div class="billeder-af-os">Billeder af os</div>
+                            <a href="/memories" class="a" style="text-decoration: none;">
+                                <div class="header-menu">
+                                    <div class="details">
+                                        <div class="summary">
+                                            <div class="span3">
+                                                <div class="minder">Minder</div>
+                                            </div>
+                                            <svg class="svg" width="10" height="6" viewBox="0 0 10 6">
+                                                <path d="M1 1L5 5L9 1" stroke="#7A1713" stroke-width="1.5" fill="none"/>
+                                            </svg>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                        <div class="til-dig">Til dig</div>
-                        <div class="li6">
-                            <div class="header-menu4">
-                                <div class="details4">
-                                    <div class="summary4">
-                                        <div class="span7">
-                                            <img class="image-259" src="/images/image-259.png" />
+                        <div class="li3" style="cursor: pointer;">
+                            <a href="/quiz" class="a" style="text-decoration: none;">
+                                <div class="header-menu2">
+                                    <div class="details2">
+                                        <div class="summary2">
+                                            <div class="span4">
+                                                <div class="quiz">Quiz</div>
+                                            </div>
+                                            <svg class="svg2" width="10" height="6" viewBox="0 0 10 6">
+                                                <path d="M1 1L5 5L9 1" stroke="#7A1713" stroke-width="1.5" fill="none"/>
+                                            </svg>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
+                        </div>
+                        <div class="li4" style="cursor: pointer;">
+                            <a href="/kalendar" class="a" style="text-decoration: none;">
+                                <div class="a2">
+                                    <div class="span5">
+                                        <div class="kalendar">Kalendar</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="li5" style="cursor: pointer;">
+                            <a href="/billeder" class="a" style="text-decoration: none;">
+                                <div class="header-menu3">
+                                    <div class="details3">
+                                        <div class="summary3">
+                                            <div class="span6">
+                                                <div class="billeder-af-os">Billeder af os</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Updated Til Dig navigation -->
+                        <div class="li6" style="cursor: pointer;">
+                            <a href="/til-dig" class="a" style="text-decoration: none;">
+                                <div class="til-dig">Til dig</div>
+                                <div class="header-menu4">
+                                    <div class="details4">
+                                        <div class="summary4">
+                                            <div class="span7">
+                                                <img class="image-259" src="/images/image-259.png" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -109,22 +120,20 @@
                             <img class="img" src="/images/img0.png" />
                         </div>
                         <div class="div8">
-                            <div class="div9">
-                                <!-- Login form replaces content in this div -->
-                                <form action="/login" method="post" class="login-form">
-                                    <div class="h-2">
-                                        <input type="text" name="username" placeholder="Brugernavn" class="login-field">
-                                    </div>
-                                    <div class="div10">
-                                        <input type="password" name="password" placeholder="Adgangskode" class="login-field">
-                                    </div>
-                                    <div class="div11">
-                                        <button type="submit" class="a3">
-                                            <div class="log-ind">Log ind</div>
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
+                            <!-- Login form -->
+                            <form action="/login" method="post" class="login-form">
+                                <div class="h-2">
+                                    <input type="text" name="username" placeholder="Brugernavn" class="login-field">
+                                </div>
+                                <div class="div10">
+                                    <input type="password" name="password" placeholder="Adgangskode" class="login-field">
+                                </div>
+                                <div class="div11">
+                                    <button type="submit" class="a3">
+                                        <div class="log-ind">Log ind</div>
+                                    </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>

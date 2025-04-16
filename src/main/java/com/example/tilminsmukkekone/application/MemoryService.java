@@ -10,12 +10,14 @@ import com.example.tilminsmukkekone.infrastructure.repositories.UserDB;
 import com.example.tilminsmukkekone.infrastructure.util.ServiceException;
 import com.example.tilminsmukkekone.util.Exceptions.MemoryNotFoundException;
 import com.example.tilminsmukkekone.util.Exceptions.UserNotFoundException;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class MemoryService {
 
     MemoryDB memoryDB;
