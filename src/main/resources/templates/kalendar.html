@@ -48,12 +48,37 @@
       color: #7a1713;
       cursor: pointer;
       padding: 5px 10px;
+      text-decoration: none;
     }
 
     .current-month {
       font-size: 24px;
       font-weight: 600;
       color: #7a1713;
+    }
+
+    .view-controls {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .view-btn {
+      background-color: #f9d6c1;
+      border: 1px solid #bd1e1e;
+      border-radius: 20px;
+      padding: 8px 15px;
+      margin: 0 5px;
+      font-family: 'Ubuntu', sans-serif;
+      font-size: 14px;
+      color: #7a1713;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .view-btn.active {
+      background-color: #bd1e1e;
+      color: white;
     }
 
     .calendar-grid {
@@ -110,6 +135,34 @@
       font-weight: bold;
     }
 
+    .week-view .calendar-day {
+      height: 120px;
+    }
+
+    .year-view {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .month-card {
+      background-color: white;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .month-title {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #7a1713;
+    }
+
+    .month-events-count {
+      font-size: 14px;
+      color: #666;
+    }
+
     .event-list {
       margin-top: 30px;
       text-align: left;
@@ -141,18 +194,22 @@
       color: #777;
     }
 
-    .under-development {
-      background-color: #f9d6c1;
-      border-radius: 10px;
-      padding: 20px 30px;
-      margin: 40px 0;
-      text-align: center;
+    .add-event-btn {
+      background-color: #bd1e1e;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-family: 'Ubuntu', sans-serif;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin: 20px 0;
     }
 
-    .under-development h2 {
-      color: #7a1713;
-      font-size: 24px;
-      margin-bottom: 15px;
+    .add-event-btn:hover {
+      background-color: #a51b1b;
     }
   </style>
 </head>
@@ -290,84 +347,157 @@
                 <div class="calendar-container">
                   <h1 class="calendar-title">Vores Kalender</h1>
 
-                  <!-- Under development notice -->
-                  <div class="under-development">
-                    <h2>Under udvikling</h2>
-                    <p>Kalenderfunktionen er snart klar! I mellemtiden kan du udforske de andre dele af hjemmesiden.</p>
+                  <!-- View switching buttons -->
+                  <div class="view-controls">
+                    <a th:href="@{/kalendar(view='weekly', date=${referenceDate})}"
+                       th:class="${viewType == 'weekly' ? 'view-btn active' : 'view-btn'}">Ugentlig</a>
+                    <a th:href="@{/kalendar(view='monthly', month=${referenceDate.getMonthValue()}, year=${referenceDate.getYear()})}"
+                       th:class="${viewType == 'monthly' ? 'view-btn active' : 'view-btn'}">Månedlig</a>
+                    <a th:href="@{/kalendar(view='yearly', year=${referenceDate.getYear()})}"
+                       th:class="${viewType == 'yearly' ? 'view-btn active' : 'view-btn'}">Årlig</a>
                   </div>
 
                   <!-- Month navigation -->
                   <div class="month-navigation">
-                    <button class="month-nav-btn">❮</button>
-                    <div class="current-month" th:text="${currentMonth + ' ' + currentYear}">April 2025</div>
-                    <button class="month-nav-btn">❯</button>
+                    <!-- Dynamic navigation links based on current view -->
+                    <a th:if="${viewType == 'weekly'}"
+                       th:href="@{/kalendar(view='weekly', date=${referenceDate.minusWeeks(1)})}"
+                       class="month-nav-btn">❮</a>
+                    <a th:if="${viewType == 'monthly'}"
+                       th:href="@{/kalendar(view='monthly', month=${referenceDate.getMonthValue() == 1 ? 12 : referenceDate.getMonthValue() - 1}, year=${referenceDate.getMonthValue() == 1 ? referenceDate.getYear() - 1 : referenceDate.getYear()})}"
+                       class="month-nav-btn">❮</a>
+                    <a th:if="${viewType == 'yearly'}"
+                       th:href="@{/kalendar(view='yearly', year=${referenceDate.getYear() - 1})}"
+                       class="month-nav-btn">❮</a>
+
+                    <div class="current-month" th:text="${displayTitle}">April 2025</div>
+
+                    <a th:if="${viewType == 'weekly'}"
+                       th:href="@{/kalendar(view='weekly', date=${referenceDate.plusWeeks(1)})}"
+                       class="month-nav-btn">❯</a>
+                    <a th:if="${viewType == 'monthly'}"
+                       th:href="@{/kalendar(view='monthly', month=${referenceDate.getMonthValue() == 12 ? 1 : referenceDate.getMonthValue() + 1}, year=${referenceDate.getMonthValue() == 12 ? referenceDate.getYear() + 1 : referenceDate.getYear()})}"
+                       class="month-nav-btn">❯</a>
+                    <a th:if="${viewType == 'yearly'}"
+                       th:href="@{/kalendar(view='yearly', year=${referenceDate.getYear() + 1})}"
+                       class="month-nav-btn">❯</a>
                   </div>
 
-                  <!-- Calendar grid -->
-                  <div class="calendar-grid">
-                    <!-- Weekday headers -->
-                    <div class="weekday-header">Man</div>
-                    <div class="weekday-header">Tir</div>
-                    <div class="weekday-header">Ons</div>
-                    <div class="weekday-header">Tor</div>
-                    <div class="weekday-header">Fre</div>
-                    <div class="weekday-header">Lør</div>
-                    <div class="weekday-header">Søn</div>
+                  <!-- Weekly View -->
+                  <div th:if="${viewType == 'weekly'}" class="week-view">
+                    <div class="calendar-grid">
+                      <!-- Weekday headers -->
+                      <div class="weekday-header">Man</div>
+                      <div class="weekday-header">Tir</div>
+                      <div class="weekday-header">Ons</div>
+                      <div class="weekday-header">Tor</div>
+                      <div class="weekday-header">Fre</div>
+                      <div class="weekday-header">Lør</div>
+                      <div class="weekday-header">Søn</div>
 
-                    <!-- Calendar days would be generated dynamically -->
-                    <!-- Example of a normal day -->
-                    <div class="calendar-day">
-                      <div class="day-number">1</div>
-                    </div>
+                      <!-- Week days -->
+                      <div th:each="day : ${#numbers.sequence(0, 6)}"
+                           th:with="currentDate=${startDate.plusDays(day)}"
+                           th:class="${currentDate.equals(T(java.time.LocalDate).now()) ? 'calendar-day today' :
+                                     (currentDate.getDayOfMonth() == anniversaryDate?.getDayOfMonth() &&
+                                      currentDate.getMonthValue() == anniversaryDate?.getMonthValue() ?
+                                      'calendar-day special-day' : 'calendar-day')}">
 
-                    <!-- Example of a day with an event -->
-                    <div class="calendar-day">
-                      <div class="day-number">2</div>
-                      <div class="event-dot"></div>
-                    </div>
+                        <div class="day-number" th:text="${currentDate.getDayOfMonth()}">1</div>
 
-                    <!-- Example of today -->
-                    <div class="calendar-day today">
-                      <div class="day-number">16</div>
-                      <div class="event-dot"></div>
-                    </div>
+                        <!-- Anniversary label -->
+                        <div th:if="${currentDate.getDayOfMonth() == anniversaryDate?.getDayOfMonth() &&
+                                    currentDate.getMonthValue() == anniversaryDate?.getMonthValue()}"
+                             style="font-size: 11px; color: #7a1713;">Årsdag</div>
 
-                    <!-- Example of a special day -->
-                    <div class="calendar-day special-day">
-                      <div class="day-number">4</div>
-                      <span style="font-size: 11px; color: #7a1713;">Årsdag</span>
+                        <!-- Event dots -->
+                        <div th:each="event : ${events}"
+                             th:if="${event.getEventDate().toLocalDate().equals(currentDate)}"
+                             class="event-dot"
+                             th:attr="data-event-id=${event.getId()}"
+                             th:title="${event.getTitle()}"></div>
+                      </div>
                     </div>
-
-                    <!-- Placeholder days to fill out the grid -->
-                    <div class="calendar-day">
-                      <div class="day-number">3</div>
-                    </div>
-                    <div class="calendar-day">
-                      <div class="day-number">5</div>
-                    </div>
-                    <div class="calendar-day">
-                      <div class="day-number">6</div>
-                    </div>
-                    <div class="calendar-day">
-                      <div class="day-number">7</div>
-                    </div>
-                    <!-- More days would be generated here -->
                   </div>
+
+                  <!-- Monthly View -->
+                  <div th:if="${viewType == 'monthly'}" class="month-view">
+                    <div class="calendar-grid">
+                      <!-- Weekday headers -->
+                      <div class="weekday-header">Man</div>
+                      <div class="weekday-header">Tir</div>
+                      <div class="weekday-header">Ons</div>
+                      <div class="weekday-header">Tor</div>
+                      <div class="weekday-header">Fre</div>
+                      <div class="weekday-header">Lør</div>
+                      <div class="weekday-header">Søn</div>
+
+                      <!-- Empty cells for days before the first of the month -->
+                      <div th:each="day : ${#numbers.sequence(1, firstDayOfMonth - 1)}" class="calendar-day" style="visibility: hidden;"></div>
+
+                      <!-- Month days -->
+                      <div th:each="day : ${#numbers.sequence(1, daysInMonth)}"
+                           th:with="currentDate=${startDate.withDayOfMonth(day)}"
+                           th:class="${currentDate.equals(T(java.time.LocalDate).now()) ? 'calendar-day today' :
+                                     (currentDate.getDayOfMonth() == anniversaryDate?.getDayOfMonth() &&
+                                      currentDate.getMonthValue() == anniversaryDate?.getMonthValue() ?
+                                      'calendar-day special-day' : 'calendar-day')}">
+
+                        <div class="day-number" th:text="${day}">1</div>
+
+                        <!-- Anniversary label -->
+                        <div th:if="${currentDate.getDayOfMonth() == anniversaryDate?.getDayOfMonth() &&
+                                    currentDate.getMonthValue() == anniversaryDate?.getMonthValue()}"
+                             style="font-size: 11px; color: #7a1713;">Årsdag</div>
+
+                        <!-- Event dots -->
+                        <div th:each="event : ${events}"
+                             th:if="${event.getEventDate().toLocalDate().equals(currentDate)}"
+                             class="event-dot"
+                             th:attr="data-event-id=${event.getId()}"
+                             th:title="${event.getTitle()}"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Yearly View -->
+                  <div th:if="${viewType == 'yearly'}" class="year-view">
+                    <!-- Month cards -->
+                    <div th:each="month : ${#numbers.sequence(1, 12)}"
+                         th:with="monthDate=${T(java.time.LocalDate).of(referenceDate.getYear(), month, 1)}"
+                         class="month-card">
+                      <h3 class="month-title"
+                          th:text="${monthDate.getMonth().getDisplayName(T(java.time.format.TextStyle).FULL, T(java.util.Locale).forLanguageTag('da'))}">Januar</h3>
+
+                      <!-- Count events in this month -->
+                      <div class="month-events-count">
+                        <span th:with="count=${events.stream().filter(e -> e.getEventDate().getMonthValue() == month).count()}"
+                              th:text="${count + ' begivenheder'}">0 begivenheder</span>
+                      </div>
+
+                      <!-- Link to month view -->
+                      <a th:href="@{/kalendar(view='monthly', month=${month}, year=${referenceDate.getYear()})}"
+                         style="display: block; margin-top: 10px; font-size: 14px; color: #bd1e1e;">Vis måned</a>
+                    </div>
+                  </div>
+
+                  <!-- Add event button -->
+                  <a href="/kalendar/event/new" class="add-event-btn">+ Tilføj begivenhed</a>
 
                   <!-- Upcoming events list -->
                   <div class="event-list">
                     <h3>Kommende begivenheder</h3>
-                    <div class="event-item">
-                      <div class="event-title">Middag på Noma</div>
-                      <div class="event-date">16. april 2025, 19:00</div>
+
+                    <div th:if="${upcomingEvents.isEmpty()}" style="text-align: center; padding: 20px;">
+                      <p>Ingen kommende begivenheder</p>
                     </div>
-                    <div class="event-item">
-                      <div class="event-title">Besøg hos Janes forældre</div>
-                      <div class="event-date">20. april 2025, 13:00</div>
-                    </div>
-                    <div class="event-item">
-                      <div class="event-title">Biograftur - Nye Film</div>
-                      <div class="event-date">25. april 2025, 20:15</div>
+
+                    <div th:each="event : ${upcomingEvents}" class="event-item">
+                      <div class="event-title" th:text="${event.getTitle()}">Middag på Noma</div>
+                      <div class="event-date"
+                           th:text="${#temporals.format(event.getEventDate(), 'd. MMMM yyyy, HH:mm')}">16. april 2025, 19:00</div>
+                      <a th:href="@{/kalendar/event/{id}(id=${event.getId()})}"
+                         style="font-size: 12px; color: #bd1e1e; text-decoration: none;">Se detaljer</a>
                     </div>
                   </div>
                 </div>
@@ -406,5 +536,18 @@
     </div>
   </div>
 </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.event-dot').forEach(dot => {
+      dot.addEventListener('click', function() {
+        const eventId = this.getAttribute('data-event-id');
+        if (eventId) {
+          window.location.href = '/kalendar/event/' + eventId;
+        }
+      });
+    });
+  });
+</script>
 </body>
 </html>

@@ -11,6 +11,8 @@ import org.springframework.stereotype.Component;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -319,6 +321,92 @@ public class EventDB {
             return rowsAffected > 0;
         } catch (SQLException e) {
             throw DatabaseException.deleteError("event", id, e);
+        }
+    }
+
+    public List<Event> findEventsByWeek(LocalDate weekStartDate) {
+        try {
+            // Trin 1: Konverter startdato til LocalDateTime (starter ved midnat)
+            LocalDateTime startDateTime = weekStartDate.atStartOfDay();
+
+            // Trin 2: Beregn slutdatoen (7 dage senere ved midnat)
+            LocalDateTime endDateTime = weekStartDate.plusDays(7).atStartOfDay();
+
+            // Trin 3: Forbered SQL-forespørgslen med datointervallet
+            String sql = "SELECT * FROM events WHERE event_date >= ? AND event_date < ? ORDER BY event_date";
+
+            // Trin 4: Udfør forespørgslen med start- og slutdato som parametre
+            List<Event> events = dbOps.executeQuery(sql,
+                    new Object[]{Timestamp.valueOf(startDateTime), Timestamp.valueOf(endDateTime)},
+                    this::mapResultSetToEvent);
+
+            // Trin 5: For hver begivenhed, indlæs deltagere og relaterede minder
+            for (Event event : events) {
+                event.setParticipants(findParticipantsByEventId(event.getId()));
+                event.setRelatedMemories(findRelatedMemoriesByEventId(event.getId()));
+            }
+
+            // Trin 6: Returner den fulde liste af begivenheder
+            return events;
+        } catch (SQLException e) {
+            // Trin 7: Håndter eventuelle database-fejl
+            throw DatabaseException.readError("events_by_week", weekStartDate.toString(), e);
+        }
+    }
+
+    public List<Event> findEventsByMonth(int month, int year) {
+        try {
+            // Trin 1: Opret start- og slutdatoer for måneden
+            LocalDateTime startDateTime = LocalDate.of(year, month, 1).atStartOfDay();
+            LocalDateTime endDateTime = startDateTime.plusMonths(1);
+
+            // Trin 2: Forbered SQL-forespørgslen med datointervallet
+            String sql = "SELECT * FROM events WHERE event_date >= ? AND event_date < ? ORDER BY event_date";
+
+            // Trin 3: Udfør forespørgslen med start- og slutdato som parametre
+            List<Event> events = dbOps.executeQuery(sql,
+                    new Object[]{Timestamp.valueOf(startDateTime), Timestamp.valueOf(endDateTime)},
+                    this::mapResultSetToEvent);
+
+            // Trin 4: For hver begivenhed, indlæs deltagere og relaterede minder
+            for (Event event : events) {
+                event.setParticipants(findParticipantsByEventId(event.getId()));
+                event.setRelatedMemories(findRelatedMemoriesByEventId(event.getId()));
+            }
+
+            // Trin 5: Returner den fulde liste af begivenheder
+            return events;
+        } catch (SQLException e) {
+            // Trin 6: Håndter eventuelle database-fejl
+            throw DatabaseException.readError("events_by_month", month + "/" + year, e);
+        }
+    }
+
+    public List<Event> findEventsByYear(int year) {
+        try {
+            // Trin 1: Opret start- og slutdatoer for året
+            LocalDateTime startDateTime = LocalDate.of(year, 1, 1).atStartOfDay();
+            LocalDateTime endDateTime = LocalDate.of(year + 1, 1, 1).atStartOfDay();
+
+            // Trin 2: Forbered SQL-forespørgslen med datointervallet
+            String sql = "SELECT * FROM events WHERE event_date >= ? AND event_date < ? ORDER BY event_date";
+
+            // Trin 3: Udfør forespørgslen med start- og slutdato som parametre
+            List<Event> events = dbOps.executeQuery(sql,
+                    new Object[]{Timestamp.valueOf(startDateTime), Timestamp.valueOf(endDateTime)},
+                    this::mapResultSetToEvent);
+
+            // Trin 4: For hver begivenhed, indlæs deltagere og relaterede minder
+            for (Event event : events) {
+                event.setParticipants(findParticipantsByEventId(event.getId()));
+                event.setRelatedMemories(findRelatedMemoriesByEventId(event.getId()));
+            }
+
+            // Trin 5: Returner den fulde liste af begivenheder
+            return events;
+        } catch (SQLException e) {
+            // Trin 6: Håndter eventuelle database-fejl
+            throw DatabaseException.readError("events_by_year", String.valueOf(year), e);
         }
     }
 }

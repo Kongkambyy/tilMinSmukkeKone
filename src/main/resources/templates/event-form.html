@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Opret Begivenhed | Til Min Smukke Kone</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap">
+  <link rel="stylesheet" href="/css/vars.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .form-section {
+      padding: 40px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .form-container {
+      width: 90%;
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.92);
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(122, 23, 19, 0.1);
+      padding: 30px;
+      text-align: center;
+    }
+
+    .form-title {
+      font-family: 'Ubuntu', serif;
+      font-size: 32px;
+      font-weight: 700;
+      color: #7a1713;
+      margin: 0 0 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: #7a1713;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: 'Ubuntu', sans-serif;
+      font-size: 16px;
+    }
+
+    .form-control:focus {
+      border-color: #bd1e1e;
+      outline: none;
+    }
+
+    .submit-btn {
+      background-color: #bd1e1e;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      padding: 12px 30px;
+      font-size: 18px;
+      font-family: 'Ubuntu', sans-serif;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .submit-btn:hover {
+      background-color: #a51b1b;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 20px;
+      color: #7a1713;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+<div class="body">
+  <!-- Top notification bar -->
+  <div class="div">
+    <div class="div2">
+      <div class="div3">
+        <div class="div4">
+          <div class="p">
+            <div class="span">
+              <div class="velkommen-til-vores-k-rlighedsside">
+                Velkommen til vores kærlighedsside
+              </div>
+              <img class="image-258" src="/images/image-258.png" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header section -->
+  <div class="div5">
+    <div class="sticky-header">
+      <div class="header">
+        <div class="nav">
+          <div class="ul">
+            <!-- Home button -->
+            <div class="li">
+              <a href="/" class="a">
+                <div class="span2">
+                  <div class="hjem">Hjem</div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Memories button -->
+            <div class="li2">
+              <a href="/memories" class="a" style="text-decoration: none;">
+                <div class="header-menu">
+                  <div class="details">
+                    <div class="summary">
+                      <div class="span3">
+                        <div class="minder">Minder</div>
+                      </div>
+                      <svg class="svg" width="10" height="6" viewBox="0 0 10 6">
+                        <path d="M1 1L5 5L9 1" stroke="#7A1713" stroke-width="1.5" fill="none"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Quiz button -->
+            <div class="li3" style="cursor: pointer;">
+              <a href="/quiz" class="a" style="text-decoration: none;">
+                <div class="header-menu2">
+                  <div class="details2">
+                    <div class="summary2">
+                      <div class="span4">
+                        <div class="quiz">Quiz</div>
+                      </div>
+                      <svg class="svg2" width="10" height="6" viewBox="0 0 10 6">
+                        <path d="M1 1L5 5L9 1" stroke="#7A1713" stroke-width="1.5" fill="none"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Calendar button - active -->
+            <div class="li4" style="cursor: pointer;">
+              <a href="/kalendar" class="a" style="text-decoration: none;">
+                <div class="a2">
+                  <div class="span5">
+                    <div class="kalendar">Kalendar</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- Photos button -->
+            <div class="li5" style="cursor: pointer;">
+              <a href="/billeder" class="a" style="text-decoration: none;">
+                <div class="header-menu3">
+                  <div class="details3">
+                    <div class="summary3">
+                      <div class="span6">
+                        <div class="billeder-af-os">Billeder af os</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <!-- To You button -->
+            <div class="li6" style="cursor: pointer;">
+              <a href="/til-dig" class="a" style="text-decoration: none;">
+                <div class="til-dig">Til dig</div>
+                <div class="header-menu4">
+                  <div class="details4">
+                    <div class="summary4">
+                      <div class="span7">
+                        <img class="image-259" src="/images/image-259.png" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <img class="image-262" src="/images/image-262.png" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Main content with background -->
+  <div class="main">
+    <div class="section">
+      <div class="slideshow-component">
+        <div class="div6">
+          <div class="div6">
+            <div class="div7">
+              <img class="img" src="/images/img0.png" />
+            </div>
+            <div class="div8">
+              <!-- Event form -->
+              <div class="form-section">
+                <div class="form-container">
+                  <h1 class="form-title" th:text="${event.id != null ? 'Rediger Begivenhed' : 'Opret Ny Begivenhed'}">Opret Ny Begivenhed</h1>
+
+                  <form th:action="${event.id != null ? '/kalendar/event/' + event.id + '/edit' : '/kalendar/event/new'}"
+                        method="post" th:object="${event}">
+
+                    <div class="form-group">
+                      <label for="title">Titel</label>
+                      <input type="text" id="title" th:field="*{title}" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="description">Beskrivelse</label>
+                      <textarea id="description" th:field="*{description}" class="form-control" rows="4"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="eventDate">Dato og tidspunkt</label>
+                      <input type="datetime-local" id="eventDate" th:field="*{eventDate}" class="form-control" required>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="type">Type</label>
+                      <select id="type" th:field="*{type}" class="form-control" required>
+                        <option value="">Vælg type</option>
+                        <option th:each="eventType : ${eventTypes}"
+                                th:value="${eventType}"
+                                th:text="${eventType.name()}">Begivenhedstype</option>
+                      </select>
+                    </div>
+
+                    <!-- Location fields (optional) -->
+                    <div class="form-group">
+                      <label for="locationName">Sted (valgfrit)</label>
+                      <input type="text" id="locationName" th:field="*{location.name}" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                      <label for="locationAddress">Adresse (valgfrit)</label>
+                      <input type="text" id="locationAddress" th:field="*{location.address}" class="form-control">
+                    </div>
+
+                    <button type="submit" class="submit-btn"
+                            th:text="${event.id != null ? 'Opdater Begivenhed' : 'Opret Begivenhed'}">Opret Begivenhed</button>
+                  </form>
+
+                  <a href="/kalendar" class="back-link">← Tilbage til kalender</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="div12">
+      <div class="section2">
+        <div class="div13">
+          <div class="div14">
+            <div class="div15">
+              <div class="ul2">
+                <div class="li7">
+                  <div class="span8"></div>
+                </div>
+                <div class="li8">
+                  <div class="span9">
+                    <div class="minder-fra-hele-vores-forhold">
+                      Minder fra hele vores forhold
+                    </div>
+                  </div>
+                </div>
+                <div class="velkommen-til-vores-k-rlighedsside2">
+                  Velkommen til vores kærlighedsside
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
